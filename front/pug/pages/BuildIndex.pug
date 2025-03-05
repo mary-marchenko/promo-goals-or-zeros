@@ -8,31 +8,31 @@
                     img(src="img/promo/titleText-tab.png" alt="text")
             .promo__match
                 .promo__team
-                    .team.team1
+                    .team.team1.animRight
                         .team-man
                             picture
-                                source(media="(max-width: 600px)" srcset="img/promo/man-ukr-mob.png")
-                                source(media="(max-width: 1300px)" srcset="img/promo/man-ukr-tab.png")
-                                img(src="img/promo/man-ukr-desk.png" alt="footballer")
+                                source(media="(max-width: 600px)" srcset="img/teams/man-ukr1-mob.png")
+                                source(media="(max-width: 1300px)" srcset="img/teams/man-ukr1-tab.png")
+                                img(src="img/teams/man-ukr1-desk.png" alt="footballer")
                         .team-text
                             picture
-                                source(media="(max-width: 600px)" srcset="img/promo/text-ukr-mob.png")
-                                source(media="(max-width: 1300px)" srcset="img/promo/text-ukr-tab.png")
-                                img(src="img/promo/text-ukr-desk.png" alt="text")
+                                source(media="(max-width: 600px)" srcset="img/teams/text-ukr-mob.png")
+                                source(media="(max-width: 1300px)" srcset="img/teams/text-ukr-tab.png")
+                                img(src="img/teams/text-ukr-desk.png" alt="text")
                 .promo__match-title
                     img(src="img/promo/titleText-desk.png" alt="text")
                 .promo__team
                     .team.team2.test
                         .team-man
                             picture
-                                source(media="(max-width: 600px)" srcset="img/promo/man-bel-mob")
-                                source(media="(max-width: 1300px)" srcset="img/promo/man-bel-tab")
-                                img(src="img/promo/man-bel-desk2.png" alt="footballer")
+                                source(media="(max-width: 600px)" srcset="img/teams/man-bel1-mob")
+                                source(media="(max-width: 1300px)" srcset="img/teams/man-bel1-tab")
+                                img(src="img/teams/man-bel1-desk.png" alt="footballer")
                         .team-text
                             picture
-                                source(media="(max-width: 600px)" srcset="img/promo/text-bel-mob")
-                                source(media="(max-width: 1300px)" srcset="img/promo/text-bel-tab")
-                                img(src="img/promo/text-bel-desk2.png" alt="text")
+                                source(media="(max-width: 600px)" srcset="img/teams/text-bel-mob")
+                                source(media="(max-width: 1300px)" srcset="img/teams/text-bel-tab")
+                                img(src="img/teams/text-bel-desk.png" alt="text")
             .promo__prize
                 p.promo__prize-title #[span На кону] призовий фонд
                 .promo__prize-money
@@ -121,17 +121,17 @@
             .predict__container.score-1
                 .predict__container-teams
                     .predict__team
-                        .team.team1.predictTeam
+                        .team.team1.predictTeam.animRight
                             .team-man
                                 picture
-                                    source(media="(max-width: 600px)" srcset="img/promo/man-ukr-mob")
-                                    source(media="(max-width: 1300px)" srcset="img/promo/man-ukr-tab")
-                                    img(src="img/promo/man-ukr-desk.png" alt="footballer")
+                                    source(media="(max-width: 600px)" srcset="img/teams/man-ukr1-mob")
+                                    source(media="(max-width: 1300px)" srcset="img/teams/man-ukr1-tab")
+                                    img(src="img/teams/man-ukr1-desk.png" alt="footballer")
                             .team-text
                                 picture
-                                    source(media="(max-width: 600px)" srcset="img/promo/text-ukr-mob")
-                                    source(media="(max-width: 1300px)" srcset="img/promo/text-ukr-tab")
-                                img(src="img/promo/text-ukr-desk.png" alt="text")
+                                    source(media="(max-width: 600px)" srcset="img/teams/text-ukr-mob")
+                                    source(media="(max-width: 1300px)" srcset="img/teams/text-ukr-tab")
+                                img(src="img/teams/text-ukr-desk.png" alt="text")
                         .predict__team-control
                             .predict__team-decrease.team1-minus(role="button")
                             .predict__team-number 0
@@ -145,14 +145,14 @@
                         .team.team2.predictTeam
                             .team-man
                                 picture
-                                    source(media="(max-width: 600px)" srcset="img/promo/man-bel-mob")
-                                    source(media="(max-width: 1300px)" srcset="img/promo/man-bel-tab")
-                                    img(src="img/promo/man-bel-desk.png" alt="footballer")
+                                    source(media="(max-width: 600px)" srcset="img/teams/man-bel1-mob")
+                                    source(media="(max-width: 1300px)" srcset="img/teams/man-bel1-tab")
+                                    img(src="img/teams/man-bel1-desk.png" alt="footballer")
                             .team-text
                                 picture
-                                    source(media="(max-width: 600px)" srcset="img/promo/text-bel-mob")
-                                    source(media="(max-width: 1300px)" srcset="img/promo/text-bel-tab")
-                                    img(src="img/promo/text-bel-desk.png" alt="text")
+                                    source(media="(max-width: 600px)" srcset="img/teams/text-bel-mob")
+                                    source(media="(max-width: 1300px)" srcset="img/teams/text-bel-tab")
+                                    img(src="img/teams/text-bel-desk.png" alt="text")
                         .predict__team-control
                             .predict__team-decrease.team1-minus(role="button")
                             .predict__team-number 0
@@ -372,8 +372,12 @@
     .table
         .wrapper
             .table__title
-                img(src="img/table-title.png" alt="clock")
+                img(src="img/table/table-title.png" alt="Table")
             .table__wrap#results-table
+                .table__tabs
+                    .table__tabs-date.active 20.03 12:00
+                    .table__tabs-date 23.03 12:00
+
                 .table__head
                     .table__head-item(data-translate="tableId") ID Учасника
                     .table__head-item(data-translate="tablePredict") Прогноз
@@ -381,6 +385,94 @@
                     .table__head-item(data-translate="") Бонус
                 .table__body
                     .table__body-scroll
+                        .table__row
+                            .table__row-item 123456789
+                            .table__row-item
+                                span **
+                                img(src="img/vs.png" alt="clock")
+                                span **
+                            .table__row-item 0000067
+                            .table__row-item 0000067
+                        .table__row
+                            .table__row-item 100300268
+                            .table__row-item
+                                span **
+                                img(src="img/vs.png" alt="clock")
+                                span **
+                            .table__row-item 0000067
+                            .table__row-item 0000067
+                        .table__row
+                            .table__row-item 0000067
+                            .table__row-item
+                                span **
+                                img(src="img/vs.png" alt="clock")
+                                span **
+                            .table__row-item 0000067
+                            .table__row-item 0000067
+                        .table__row
+                            .table__row-item 0000067
+                            .table__row-item
+                                span **
+                                img(src="img/vs.png" alt="clock")
+                                span **
+                            .table__row-item 0000067
+                            .table__row-item 0000067
+                        .table__row
+                            .table__row-item 0000067
+                            .table__row-item
+                                span **
+                                img(src="img/vs.png" alt="clock")
+                                span **
+                            .table__row-item 0000067
+                            .table__row-item 0000067
+                        .table__row
+                            .table__row-item 0000067
+                            .table__row-item
+                                span **
+                                img(src="img/vs.png" alt="clock")
+                                span **
+                            .table__row-item 0000067
+                            .table__row-item 0000067
+                        .table__row
+                            .table__row-item 0000067
+                            .table__row-item
+                                span **
+                                img(src="img/vs.png" alt="clock")
+                                span **
+                            .table__row-item 0000067
+                            .table__row-item 0000067
+                        .table__row
+                            .table__row-item 0000067
+                            .table__row-item
+                                span **
+                                img(src="img/vs.png" alt="clock")
+                                span **
+                            .table__row-item 0000067
+                            .table__row-item 0000067
+                        .table__row
+                            .table__row-item 0000067
+                            .table__row-item
+                                span **
+                                img(src="img/vs.png" alt="clock")
+                                span **
+                            .table__row-item 0000067
+                            .table__row-item 0000067
+                        .table__row.you
+                            .table__row-item 0000067
+                            .table__row-item
+                                span **
+                                img(src="img/vs.png" alt="clock")
+                                span **
+                            .table__row-item 0000067
+                            .table__row-item 0000067
+                        .table__row
+                            .table__row-item 0000067
+                            .table__row-item
+                                span **
+                                img(src="img/vs.png" alt="clock")
+                                span **
+                            .table__row-item 0000067
+                            .table__row-item 0000067
             .table__bottom
                 p * Точний приз (Бонус) у вигляді визначеної кількості електронних грошових замінників та додаткового бонусу буде відомий після закінчення матчу та доданий в таблицю наступного робочого дня. Призовий фонд (а саме 250 000 ₴ на кожен окремий матч) буде розподілено між учасниками, та які вказали точний рахунок виключно основного часу матчу та зробили підтверджувальну ставку, умови якої прописані в Офіційних правилах участі в Акції «Голи чи нулі?» в п.9.2 - 9.4.
                 p **Бонус надається у випадку вірно вказаного рахунку матчу.

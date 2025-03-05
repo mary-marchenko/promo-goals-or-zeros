@@ -28,16 +28,21 @@ document.querySelector('.gide__popup-close').addEventListener('click', function(
 });
 
 // 3D anim
-const cards = document.querySelectorAll(".team, .test"); // Выбираем все элементы с классами .team и .test
+const cards = document.querySelectorAll(".team, .test, .animRight"); // Добавляем .animRight
 let angle = 0;
 
 function animateCards() {
-    angle += 1; // Скорость движения
+    angle += 0.9; // Скорость движения
     const rotateX = Math.sin(angle * (Math.PI / 180)) * 10; // Колебание по X
     const rotateY = Math.cos(angle * (Math.PI / 180)) * 10; // Колебание по Y
 
     cards.forEach(card => {
-        card.style.transform = `rotateY(${rotateY}deg) rotateX(${rotateX}deg)`;
+        if (card.classList.contains("animRight")) {
+            // Для .animRight меняем направление вращения
+            card.style.transform = `rotateY(${-rotateY}deg) rotateX(${-rotateX}deg)`;
+        } else {
+            card.style.transform = `rotateY(${rotateY}deg) rotateX(${rotateX}deg)`;
+        }
     });
 
     requestAnimationFrame(animateCards);

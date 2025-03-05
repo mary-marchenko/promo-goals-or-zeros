@@ -36,7 +36,7 @@ body
   padding: 27px 52px
   width: max-content
   background: url('../img/btn-bg.png') no-repeat 50% 50%/cover
-  transition: background .3s ease-in-out
+  transition: background .4s ease-in-out
   cursor: pointer
   background-size: 100% 100%
   &:hover
@@ -72,17 +72,17 @@ body
     transform: translate(-50%, -50%) translateZ(80px)
     width: 43%
   &.team1
-    background: url('../img/promo/card-ukr-desk.png') no-repeat 100% 100%/cover
+    background: url('../img/teams/card-1-desk.png') no-repeat 100% 100%/cover
     @media screen and (max-width: 1300px)
-      background: url("../img/card-ukr-tab.png") no-repeat 100% 100%/cover
+      background: url("../img/teams/card-1-tab.png") no-repeat 100% 100%/cover
     @media screen and (max-width: 600px)
-      background: url("../img/card-ukr-mob.png") no-repeat 100% 100%/cover
+      background: url("../img/teams/card-1-mob.png") no-repeat 100% 100%/cover
   &.team2
-    background: url('../img/promo/card-bel-desk2.png') no-repeat 100% 100%/cover
+    background: url('../img/teams/card-2-desk.png') no-repeat 100% 100%/cover
     @media screen and (max-width: 1300px)
-      background: url("../img/card-bel-tab.png") no-repeat 100% 100%/cover
+      background: url("../img/teams/card-2-tab.png") no-repeat 100% 100%/cover
     @media screen and (max-width: 600px)
-      background: url("../img/card-bel-mob.png") no-repeat 100% 100%/cover
+      background: url("../img/teams/card-2-mob.png") no-repeat 100% 100%/cover
 .fav-page
   display: flex
   align-items: center
@@ -342,7 +342,7 @@ body
       display: flex
     &-score
       cursor: pointer
-      transition: .3s ease-in-out
+      transition: .4s ease-in-out
       padding: 16px 30px 16px 49px
       color: $white
       text-shadow: 0px 2px 0px rgba(0, 0, 0, 0.25)
@@ -370,7 +370,7 @@ body
         color: $grey
     &-goal
       cursor: pointer
-      transition: .3s ease-in-out
+      transition: .4s ease-in-out
       padding: 16px 34px 16px 30px
       color: $white
       text-shadow: 0px 2px 0px rgba(0, 0, 0, 0.25)
@@ -412,7 +412,7 @@ body
         color: $white
         font-size: 18px
         text-shadow: 0px 2px 0px rgba(0, 0, 0, 0.25)
-        transition: .3s ease-in-out
+        transition: .4s ease-in-out
         background: url('../img/tabsDateL-desk.png') no-repeat 0% 50%/cover
         @media screen and (max-width: 600px)
           background: url('../img/tabsDateL-mob.png') no-repeat 0% 50%/cover
@@ -433,7 +433,7 @@ body
         color: $white
         font-size: 18px
         text-shadow: 0px 2px 0px rgba(0, 0, 0, 0.25)
-        transition: .3s ease-in-out
+        transition: .4s ease-in-out
         background: url('../img/tabsDateR-desk.png') no-repeat 100% 50%/cover
         @media screen and (max-width: 600px)
           background: url('../img/tabsDateR-mob.png') no-repeat 100% 50%/cover
@@ -617,6 +617,187 @@ body
         color: $magenta
       &.active
         display: flex
+.table
+  margin-top: 119px
+  position: relative
+  width: 100%
+  background: url('../img/table/bgBack-4.png') no-repeat 100% 0%/cover
+  &:before
+    z-index: 1
+    content: ""
+    position: absolute
+    top: 0
+    left: 0
+    width: 100%
+    height: 178px
+    background: linear-gradient(0deg, rgba(0, 0, 85, 0.00) 0%, #005 100%)
+  &:after
+    z-index: 1
+    content: ""
+    position: absolute
+    bottom: 0
+    left: 0
+    width: 100%
+    height: 178px
+    background: linear-gradient(180deg, rgba(0, 0, 85, 0.00) 0%, #005 100%)
+  .wrapper
+    display: flex
+    flex-direction: column
+    align-items: center
+    background: url('../img/table/bg-tab-desk.jpg') no-repeat 100% 100%/cover
+    @media screen and (max-width: 1300px)
+      background: url("../img/table/bg-tab-tab.jpg") no-repeat 100% 100%/cover
+    @media screen and (max-width: 600px)
+      background: url("../img/table/bg-tab-mob.png") no-repeat 100% 100%/cover
+  &__title
+    width: 356px
+    margin: 44px auto 40px
+    z-index: 2
+  &__wrap
+    width: 640px
+    height: 740px
+    padding: 0 20px
+    background: url('../img/table/table-bg.jpg') no-repeat 100% 100%/cover
+    @media screen and (max-width: 600px)
+      background: url("../img/table/table-bd-mob.png") no-repeat 100% 100%/cover
+  &__tabs
+    display: flex
+    justify-content: center
+    z-index: 2
+    position: relative
+    &-date
+      &:first-child
+        cursor: pointer
+        padding: 13px 24px 13px 47px
+        font-family: $font-montserrat-bold
+        color: $white
+        font-size: 18px
+        text-shadow: 0px 2px 0px rgba(0, 0, 0, 0.25)
+        transition: .4s ease-in-out
+        background: url('../img/tabsDateL-desk.png') no-repeat 0% 50%/cover
+        @media screen and (max-width: 600px)
+          background: url('../img/tabsDateL-mob.png') no-repeat 0% 50%/cover
+        &:hover
+          background: url('../img/predict/tabsScore-hover-desk.png') no-repeat 0% 100%/cover
+        &.active
+          background: url('../img/tabsDateL-active-desk.png') no-repeat 0% 50%/cover
+          &:hover
+            background: url('../img/predict/tabsScore-hover-desk.png') no-repeat 0% 100%/cover
+        &.disabled
+          background: url('../img/predict/tabsScore-disable-desk.png') no-repeat 0% 100%/cover
+          pointer-events: none
+          color: $grey
+      &:last-child
+        cursor: pointer
+        padding: 13px 24px 13px 47px
+        font-family: $font-montserrat-bold
+        color: $white
+        font-size: 18px
+        text-shadow: 0px 2px 0px rgba(0, 0, 0, 0.25)
+        transition: .4s ease-in-out
+        background: url('../img/tabsDateR-desk.png') no-repeat 100% 50%/cover
+        @media screen and (max-width: 600px)
+          background: url('../img/tabsDateR-mob.png') no-repeat 100% 50%/cover
+        &:hover
+          background: url('../img/predict/tabsGoal-hover-desk.png') no-repeat 100% 100%/cover
+        &.active
+          background: url('../img/tabsDateR-active-desk.png') no-repeat 100% 50%/cover
+          &:hover
+            background: url('../img/predict/tabsGoal-hover-desk.png') no-repeat 100% 100%/cover
+        &.disabled
+          background: url('../img/predict/tabsGoal-disable-desk.png') no-repeat 100% 100%/cover
+          pointer-events: none
+          color: $grey
+  &__head
+    width: 100%
+    display: flex
+    align-items: center
+    height: 50px
+    &-item
+      color: $grey-light
+      font-family: $font-montserrat-bold
+      font-size: 13px
+      letter-spacing: 0.52px
+      width: 100%
+      display: flex
+      text-transform: uppercase
+      &:nth-child(1)
+        width: 136px
+        padding-left: 20px
+      &:nth-child(2)
+        width: 147px
+        justify-content: flex-end
+        padding-right: 20px
+      &:nth-child(3)
+        width: 146px
+        justify-content: flex-start
+        padding-left: 20px
+      &:nth-child(4)
+        justify-content: flex-start
+        padding-left: 20px
+        width: 161px
+  &__body
+    &-scroll
+      height: 540px
+      max-height: 540px
+      &::-webkit-scrollbar-thumb
+        width: 4px
+        background: $green
+      &::-webkit-scrollbar
+        background: rgba(63, 150, 111, 0.40)
+        width: 4px
+  &__row
+    display: flex
+    align-items: center
+    width: 100%
+    &:nth-child(even)
+      background: rgba(7, 2, 46, 0.80)
+    &:nth-child(odd)
+      background: rgba(0, 0, 85, 0.50)
+    &.you
+      border: 2px solid $magenta
+      .table__row-item
+        &:first-child
+          background: url('../img/table/bg-td-you.png') no-repeat 100% 100%/cover
+    &-item
+      display: flex
+      align-items: center
+      font-family: $font-oswald-Bold
+      font-size: 18px
+      letter-spacing: 0.36px
+      color: $white
+      text-transform: uppercase
+      text-shadow: 0px 2px 0px rgba(0, 0, 0, 0.25)
+      width: 147px
+      height: 54px
+      &:not(:first-child)
+          border-right: 1px solid rgba(255, 255, 255, 0.12)
+      &:last-child
+        border-right: none
+      &:first-child
+        justify-content: flex-start
+        padding-left: 20px
+        width: 136px
+        padding-right: 15px
+        height: 54px
+        background: url('../img/table/bg-td.png') no-repeat 100% 100%/cover
+        background-size: 100% 100%
+      &:nth-child(2)
+        justify-content: flex-end
+        padding-right: 20px
+        width: 147px
+      &:nth-child(3)
+        justify-content: flex-start
+        padding-left: 20px
+        width: 146px
+      &:nth-child(4)
+        justify-content: flex-start
+        padding-left: 20px
+        width: 161px
+      img
+        width: 36px
+        height: 22px
+        margin: 0 9px
 
 
 
