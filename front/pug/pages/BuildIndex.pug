@@ -7,30 +7,32 @@
                     source(media="(max-width: 600px)" srcset="img/promo/titleText-mob.png")
                     img(src="img/promo/titleText-tab.png" alt="text")
             .promo__match
-                .promo__team.team.team1
-                    .team-man
-                        picture
-                            source(media="(max-width: 600px)" srcset="img/promo/man-ukr-mob.png")
-                            source(media="(max-width: 1300px)" srcset="img/promo/man-ukr-tab.png")
-                            img(src="img/promo/man-ukr-desk.png" alt="footballer")
-                    .team-text
-                        picture
-                            source(media="(max-width: 600px)" srcset="img/promo/text-ukr-mob.png")
-                            source(media="(max-width: 1300px)" srcset="img/promo/text-ukr-tab.png")
-                            img(src="img/promo/text-ukr-desk.png" alt="text")
+                .promo__team
+                    .team.team1
+                        .team-man
+                            picture
+                                source(media="(max-width: 600px)" srcset="img/promo/man-ukr-mob.png")
+                                source(media="(max-width: 1300px)" srcset="img/promo/man-ukr-tab.png")
+                                img(src="img/promo/man-ukr-desk.png" alt="footballer")
+                        .team-text
+                            picture
+                                source(media="(max-width: 600px)" srcset="img/promo/text-ukr-mob.png")
+                                source(media="(max-width: 1300px)" srcset="img/promo/text-ukr-tab.png")
+                                img(src="img/promo/text-ukr-desk.png" alt="text")
                 .promo__match-title
                     img(src="img/promo/titleText-desk.png" alt="text")
-                .promo__team.team.team2
-                    .team-man
-                        picture
-                            source(media="(max-width: 600px)" srcset="img/promo/man-bel-mob")
-                            source(media="(max-width: 1300px)" srcset="img/promo/man-bel-tab")
-                            img(src="img/promo/man-bel-desk.png" alt="footballer")
-                    .team-text
-                        picture
-                            source(media="(max-width: 600px)" srcset="img/promo/text-bel-mob")
-                            source(media="(max-width: 1300px)" srcset="img/promo/text-bel-tab")
-                            img(src="img/promo/text-bel-desk.png" alt="text")
+                .promo__team
+                    .team.team2.test
+                        .team-man
+                            picture
+                                source(media="(max-width: 600px)" srcset="img/promo/man-bel-mob")
+                                source(media="(max-width: 1300px)" srcset="img/promo/man-bel-tab")
+                                img(src="img/promo/man-bel-desk2.png" alt="footballer")
+                        .team-text
+                            picture
+                                source(media="(max-width: 600px)" srcset="img/promo/text-bel-mob")
+                                source(media="(max-width: 1300px)" srcset="img/promo/text-bel-tab")
+                                img(src="img/promo/text-bel-desk2.png" alt="text")
             .promo__prize
                 p.promo__prize-title #[span На кону] призовий фонд
                 .promo__prize-money
@@ -63,39 +65,42 @@
                     p #[span Ставки з Бонусного рахунку], з ознакою «Cash Out», «Повернення ставки», ставки із застосованим бонусом «Страховка ставки», ставки з розділу «Cybersport (Pinnacle)» та «Fantasy football» - не враховуються.
             .gide__list
                 .gide__list-item
-                    .gide__list-bg
-                        picture
-                            source(media="(max-width: 600px)" srcset="img/gide/gideCard1-mob")
-                            source(media="(max-width: 1300px)" srcset="img/gide/gideCard1-tab")
-                            img(src="img/gide/gideCard1-desk.png" alt="card")
-                    .gide__list-txt
-                        picture
-                            source(media="(max-width: 600px)" srcset="img/gide/gideTxt1-mob")
-                            source(media="(max-width: 1300px)" srcset="img/gide/gideTxt1-tab")
-                            img(src="img/gide/gideTxt1-desk.png" alt="text")
+                    .gide__list-card.test
+                        .gide__list-bg
+                            picture
+                                source(media="(max-width: 600px)" srcset="img/gide/gideCard1-mob")
+                                source(media="(max-width: 1300px)" srcset="img/gide/gideCard1-tab")
+                                img(src="img/gide/gideCard1-desk.png" alt="card")
+                        .gide__list-txt
+                            picture
+                                source(media="(max-width: 600px)" srcset="img/gide/gideTxt1-mob")
+                                source(media="(max-width: 1300px)" srcset="img/gide/gideTxt1-tab")
+                                img(src="img/gide/gideTxt1-desk.png" alt="text")
                     .gide__list-btn.btn #[span.btn-text(data-translate="MoreInfo") Детальніше]
                 .gide__list-item
-                    .gide__list-bg
-                        picture
-                            source(media="(max-width: 600px)" srcset="img/gide/gideCard2-mob")
-                            source(media="(max-width: 1300px)" srcset="img/gide/gideCard2-tab")
-                            img(src="img/gide/gideCard2-desk.png" alt="card")
-                    .gide__list-txt
-                        picture
-                            source(media="(max-width: 600px)" srcset="img/gide/gideTxt2-mob")
-                            source(media="(max-width: 1300px)" srcset="img/gide/gideTxt2-tab")
-                            img(src="img/gide/gideTxt2-desk.png" alt="text")
+                    .gide__list-card.card.test
+                        .gide__list-bg
+                            picture
+                                source(media="(max-width: 600px)" srcset="img/gide/gideCard2-mob")
+                                source(media="(max-width: 1300px)" srcset="img/gide/gideCard2-tab")
+                                img(src="img/gide/gideCard2-desk.png" alt="card")
+                        .gide__list-txt
+                            picture
+                                source(media="(max-width: 600px)" srcset="img/gide/gideTxt2-mob")
+                                source(media="(max-width: 1300px)" srcset="img/gide/gideTxt2-tab")
+                                img(src="img/gide/gideTxt2-desk.png" alt="text")
                 .gide__list-item
-                    .gide__list-bg
-                        picture
-                            source(media="(max-width: 600px)" srcset="img/gide/gideCard3-mob")
-                            source(media="(max-width: 1300px)" srcset="img/gide/gideCard3-tab")
-                            img(src="img/gide/gideCard3-desk.png" alt="card")
-                    .gide__list-txt
-                        picture
-                            source(media="(max-width: 600px)" srcset="img/gide/gideTxt3-mob")
-                            source(media="(max-width: 1300px)" srcset="img/gide/gideTxt3-tab")
-                            img(src="img/gide/gideTxt3-desk.png" alt="text")
+                    .gide__list-card.card.test
+                        .gide__list-bg
+                            picture
+                                source(media="(max-width: 600px)" srcset="img/gide/gideCard3-mob")
+                                source(media="(max-width: 1300px)" srcset="img/gide/gideCard3-tab")
+                                img(src="img/gide/gideCard3-desk.png" alt="card")
+                        .gide__list-txt
+                            picture
+                                source(media="(max-width: 600px)" srcset="img/gide/gideTxt3-mob")
+                                source(media="(max-width: 1300px)" srcset="img/gide/gideTxt3-tab")
+                                img(src="img/gide/gideTxt3-desk.png" alt="text")
     .predict
         .wrapper
             .predict__title
@@ -127,6 +132,10 @@
                                     source(media="(max-width: 600px)" srcset="img/promo/text-ukr-mob")
                                     source(media="(max-width: 1300px)" srcset="img/promo/text-ukr-tab")
                                 img(src="img/promo/text-ukr-desk.png" alt="text")
+                        .predict__team-control
+                            .predict__team-decrease.team1-minus(role="button")
+                            .predict__team-number 0
+                            .predict__team-increase.team1-plus(role="button")
                     .predict__circle
                         picture
                             source(media="(max-width: 600px)" srcset="img/predict/circle-mob")
@@ -144,8 +153,12 @@
                                     source(media="(max-width: 600px)" srcset="img/promo/text-bel-mob")
                                     source(media="(max-width: 1300px)" srcset="img/promo/text-bel-tab")
                                     img(src="img/promo/text-bel-desk.png" alt="text")
+                        .predict__team-control
+                            .predict__team-decrease.team1-minus(role="button")
+                            .predict__team-number 0
+                            .predict__team-increase.team1-plus(role="button")
                 .predict__container-calculations
-                    .predict__info Найпопулярніші прогнози
+                    .predict__info #[span Найпопулярніші прогнози]
                     .predict__forecasts
                         .predict__forecasts-item #[span 20%] 0-2
                         .predict__forecasts-item #[span 20%] 0-2
@@ -154,50 +167,61 @@
                     .predict__last
                         .predict__last-title
                             .predict__last-img
-                                img(src="img/clock.svg" alt="clock")
+                                img(src="img/predict/clock.svg" alt="clock")
                             .predict__last-txt Твій останній прогноз
-                        .predict__last-score
-                            .predict__last-team1 Україна
-                            .predict__last-counter
-                                span.scoreTeam1 0
-                                .predict__last-vs
-                                    img(src="img/vs.png" alt="vs")
-                                span.scoreTeam2 0
-                            .predict__last-team2 Бельгія
-                        .predict__last-confirmed Підтверджений
-                        .predict__last-unconfirmed Непідтверджений
+                        .predict__last-info
+                            .predict__last-score
+                                .predict__last-team.team1 Україна
+                                .predict__last-counter
+                                    span.scoreTeam1 0
+                                    .predict__last-vs
+                                        img(src="img/vs.png" alt="vs")
+                                    span.scoreTeam2 0
+                                .predict__last-team.team2 Бельгія
+                            .predict__last-result.confirmed Підтверджений
+                            .predict__last-result.unconfirmed.active Не підтверджений
             //score-2
             .predict__container.score-2
                 .predict__container-teams
-                    .predict__team.team
-                        .team-man
-                            picture
-                                source(media="(max-width: 600px)" srcset="img/promo/man-ukr-mob")
-                                source(media="(max-width: 1300px)" srcset="img/promo/man-ukr-tab")
-                                img(src="img/promo/man-ukr-desk.png" alt="footballer")
-                        .team-text
-                            picture
-                                source(media="(max-width: 600px)" srcset="img/promo/text-ukr-mob")
-                                source(media="(max-width: 1300px)" srcset="img/promo/text-ukr-tab")
+                    .predict__team
+                        .team.team1.predictTeam
+                            .team-man
+                                picture
+                                    source(media="(max-width: 600px)" srcset="img/promo/man-ukr-mob")
+                                    source(media="(max-width: 1300px)" srcset="img/promo/man-ukr-tab")
+                                    img(src="img/promo/man-ukr-desk.png" alt="footballer")
+                            .team-text
+                                picture
+                                    source(media="(max-width: 600px)" srcset="img/promo/text-ukr-mob")
+                                    source(media="(max-width: 1300px)" srcset="img/promo/text-ukr-tab")
                                 img(src="img/promo/text-ukr-desk.png" alt="text")
+                        .predict__team-control
+                            .predict__team-decrease.team1-minus(role="button")
+                            .predict__team-number 0
+                            .predict__team-increase.team1-plus(role="button")
                     .predict__circle
                         picture
-                            source(media="(max-width: 600px)" srcset="img/circle-mob")
-                            source(media="(max-width: 1300px)" srcset="img/circle-tab")
-                            img(src="img/text-ukr-desk.png" alt="circle")
-                    .predict__team.team
-                        .team-man
-                            picture
-                                source(media="(max-width: 600px)" srcset="img/promo/man-ukr-mob")
-                                source(media="(max-width: 1300px)" srcset="img/promo/man-ukr-tab")
-                                img(src="img/promo/man-ukr-desk.png" alt="footballer")
-                        .team-text
-                            picture
-                                source(media="(max-width: 600px)" srcset="img/promo/text-ukr-mob")
-                                source(media="(max-width: 1300px)" srcset="img/promo/text-ukr-tab")
-                                img(src="img/promo/text-ukr-desk.png" alt="text")
+                            source(media="(max-width: 600px)" srcset="img/predict/circle-mob")
+                            source(media="(max-width: 1300px)" srcset="img/predict/circle-tab")
+                            img(src="img/predict/circle-desk.png" alt="circle")
+                    .predict__team
+                        .team.team2.predictTeam
+                            .team-man
+                                picture
+                                    source(media="(max-width: 600px)" srcset="img/promo/man-bel-mob")
+                                    source(media="(max-width: 1300px)" srcset="img/promo/man-bel-tab")
+                                    img(src="img/promo/man-bel-desk.png" alt="footballer")
+                            .team-text
+                                picture
+                                    source(media="(max-width: 600px)" srcset="img/promo/text-bel-mob")
+                                    source(media="(max-width: 1300px)" srcset="img/promo/text-bel-tab")
+                                    img(src="img/promo/text-bel-desk.png" alt="text")
+                        .predict__team-control
+                            .predict__team-decrease.team1-minus(role="button")
+                            .predict__team-number 0
+                            .predict__team-increase.team1-plus(role="button")
                 .predict__container-calculations
-                    .predict__info Найпопулярніші прогнози
+                    .predict__info #[span Найпопулярніші прогнози]
                     .predict__forecasts
                         .predict__forecasts-item #[span 20%] 0-2
                         .predict__forecasts-item #[span 20%] 0-2
@@ -206,18 +230,19 @@
                     .predict__last
                         .predict__last-title
                             .predict__last-img
-                                img(src="img/clock.png" alt="clock")
+                                img(src="img/predict/clock.svg" alt="clock")
                             .predict__last-txt Твій останній прогноз
-                        .predict__last-score
-                            .predict__last-team1 Україна
-                            .predict__last-counter
-                                span.scoreTeam1 0
-                                .predict__last-vs
-                                    img(src="img/vs.png" alt="vs")
-                                span.scoreTeam2 0
-                            .predict__last-team2 Бельгія
-                        .predict__last-confirmed Підтверджений
-                        .predict__last-unconfirmed Непідтверджений
+                        .predict__last-info
+                            .predict__last-score
+                                .predict__last-team.team1 Україна
+                                .predict__last-counter
+                                    span.scoreTeam1 0
+                                    .predict__last-vs
+                                        img(src="img/vs.png" alt="vs")
+                                    span.scoreTeam2 0
+                                .predict__last-team.team2 Бельгія
+                            .predict__last-result.confirmed Підтверджений
+                            .predict__last-result.unconfirmed.active Не підтверджений
             //goal-1
             .predict__container.goal-1
                 .predict__container-teams
@@ -277,73 +302,73 @@
                             .predict__last-confirmed Підтверджений
                             .predict__last-unconfirmed Непідтверджений
             //goal-2
-            .predict__container.goal-1
-            .predict__container-teams
-                .predict__team1
-                    .predict__team1-card
-                        //picture
-                        //    source(media="(max-width: 600px)" srcset="img/card-ukr-mob")
-                        //    source(media="(max-width: 1300px)" srcset="img/card-ukr-tab")
-                        //    img(src="img/card-ukr-desk.png" alt="card")
-                    .predict__team1-man
-                        picture
-                            source(media="(max-width: 600px)" srcset="img/man-ukr-mob")
-                            source(media="(max-width: 1300px)" srcset="img/man-ukr-tab")
-                            img(src="img/man-ukr-desk.png" alt="footballer")
-                    .predict__team1-text
-                        picture
-                            source(media="(max-width: 600px)" srcset="img/text-ukr-mob")
-                            source(media="(max-width: 1300px)" srcset="img/text-ukr-tab")
-                            img(src="img/text-ukr-desk.png" alt="text")
-                    label.predict__radio
-                        input(type="radio", name="Ukr", value="1", hidden)
-                        predict__radio-default.img(src="radio.png", alt="option")
-                        predict__radio-checked.img(src="img3-checked.jpg", alt="Вибрано")
-                        .predict__radio-txt Обрати
-                .predict__zero
-                    .predict__zero-img
-                        picture
-                            source(media="(max-width: 600px)" srcset="img/zero-mob")
-                            source(media="(max-width: 1300px)" srcset="img/zero-tab")
-                            img(src="img/zero-desk.png" alt="zero")
-                    label.predict__radio
-                        input(type="radio", name="Ukr", value="1", hidden)
-                        predict__radio-default.img(src="radio.png", alt="option")
-                        predict__radio-checked.img(src="img3-checked.jpg", alt="Вибрано")
-                        .predict__radio-txt Обрати
-                .predict__team2
-                    .predict__team2-card
-                        //picture
-                        //    source(media="(max-width: 600px)" srcset="img/card-bel-mob")
-                        //    source(media="(max-width: 1300px)" srcset="img/card-bel-tab")
-                        //    img(src="img/card-bel-desk.png" alt="card")
-                    .predict__team2-man
-                        picture
-                            source(media="(max-width: 600px)" srcset="img/man-bel-mob")
-                            source(media="(max-width: 1300px)" srcset="img/man-bel-tab")
-                            img(src="img/man-bel-desk.png" alt="footballer")
-                    .predict__team2-text
-                        picture
-                            source(media="(max-width: 600px)" srcset="img/text-bel-mob")
-                            source(media="(max-width: 1300px)" srcset="img/text-bel-tab")
-                            img(src="img/text-bel-desk.png" alt="text")
-                    label.predict__radio
-                        input(type="radio", name="Ukr", value="1", hidden)
-                        predict__radio-default.img(src="radio.png", alt="option")
-                        predict__radio-checked.img(src="img3-checked.jpg", alt="Вибрано")
-                        .predict__radio-txt Обрати
-            .predict__container-calculations
-                .predict__btn.btn #[span.btn-text(data-translate="doPredict") Зробити прогноз]
-                .predict__last
-                    .predict__last-title
-                        .predict__last-img
-                            img(src="img/clock.svg" alt="clock")
-                        .predict__last-txt Твій останній прогноз
-                    .predict__last-goal
-                        .predict__last-txt Перший гол:
-                        .predict__last-country Україна
-                        .predict__last-confirmed Підтверджений
-                        .predict__last-unconfirmed Непідтверджений
+            .predict__container.goal-2
+                .predict__container-teams
+                    .predict__team1
+                        .predict__team1-card
+                            //picture
+                            //    source(media="(max-width: 600px)" srcset="img/card-ukr-mob")
+                            //    source(media="(max-width: 1300px)" srcset="img/card-ukr-tab")
+                            //    img(src="img/card-ukr-desk.png" alt="card")
+                        .predict__team1-man
+                            picture
+                                source(media="(max-width: 600px)" srcset="img/man-ukr-mob")
+                                source(media="(max-width: 1300px)" srcset="img/man-ukr-tab")
+                                img(src="img/man-ukr-desk.png" alt="footballer")
+                        .predict__team1-text
+                            picture
+                                source(media="(max-width: 600px)" srcset="img/text-ukr-mob")
+                                source(media="(max-width: 1300px)" srcset="img/text-ukr-tab")
+                                img(src="img/text-ukr-desk.png" alt="text")
+                        label.predict__radio
+                            input(type="radio", name="Ukr", value="1", hidden)
+                            predict__radio-default.img(src="radio.png", alt="option")
+                            predict__radio-checked.img(src="img3-checked.jpg", alt="Вибрано")
+                            .predict__radio-txt Обрати
+                    .predict__zero
+                        .predict__zero-img
+                            picture
+                                source(media="(max-width: 600px)" srcset="img/zero-mob")
+                                source(media="(max-width: 1300px)" srcset="img/zero-tab")
+                                img(src="img/zero-desk.png" alt="zero")
+                        label.predict__radio
+                            input(type="radio", name="Ukr", value="1", hidden)
+                            predict__radio-default.img(src="radio.png", alt="option")
+                            predict__radio-checked.img(src="img3-checked.jpg", alt="Вибрано")
+                            .predict__radio-txt Обрати
+                    .predict__team2
+                        .predict__team2-card
+                            //picture
+                            //    source(media="(max-width: 600px)" srcset="img/card-bel-mob")
+                            //    source(media="(max-width: 1300px)" srcset="img/card-bel-tab")
+                            //    img(src="img/card-bel-desk.png" alt="card")
+                        .predict__team2-man
+                            picture
+                                source(media="(max-width: 600px)" srcset="img/man-bel-mob")
+                                source(media="(max-width: 1300px)" srcset="img/man-bel-tab")
+                                img(src="img/man-bel-desk.png" alt="footballer")
+                        .predict__team2-text
+                            picture
+                                source(media="(max-width: 600px)" srcset="img/text-bel-mob")
+                                source(media="(max-width: 1300px)" srcset="img/text-bel-tab")
+                                img(src="img/text-bel-desk.png" alt="text")
+                        label.predict__radio
+                            input(type="radio", name="Ukr", value="1", hidden)
+                            predict__radio-default.img(src="radio.png", alt="option")
+                            predict__radio-checked.img(src="img3-checked.jpg", alt="Вибрано")
+                            .predict__radio-txt Обрати
+            //.predict__container-calculations
+            //    .predict__btn.btn #[span.btn-text(data-translate="doPredict") Зробити прогноз]
+            //    .predict__last
+            //        .predict__last-title
+            //            .predict__last-img
+            //                img(src="img/clock.svg" alt="clock")
+            //            .predict__last-txt Твій останній прогноз
+            //        .predict__last-goal
+            //            .predict__last-txt Перший гол:
+            //            .predict__last-country Україна
+            //            .predict__last-confirmed Підтверджений
+            //            .predict__last-unconfirmed Непідтверджений
     .table
         .wrapper
             .table__title

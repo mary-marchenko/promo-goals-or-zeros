@@ -1,18 +1,18 @@
-// 3D anim
-const card = document.querySelector(".promo__team");
-let angle = 0;
-
-function animateCard() {
-    angle += 1; // Швидкість руху
-    const rotateX = Math.sin(angle * (Math.PI / 180)) * 10; // Коливання по X
-    const rotateY = Math.cos(angle * (Math.PI / 180)) * 10; // Коливання по Y
-
-    card.style.transform = `rotateY(${rotateY}deg) rotateX(${rotateX}deg)`;
-
-    requestAnimationFrame(animateCard);
-}
-
-animateCard();
+// // 3D anim
+// const card = document.querySelector(".team");
+// let angle = 0;
+//
+// function animateCard() {
+//     angle += 1; // Швидкість руху
+//     const rotateX = Math.sin(angle * (Math.PI / 180)) * 10; // Коливання по X
+//     const rotateY = Math.cos(angle * (Math.PI / 180)) * 10; // Коливання по Y
+//
+//     card.style.transform = `rotateY(${rotateY}deg) rotateX(${rotateX}deg)`;
+//
+//     requestAnimationFrame(animateCard);
+// }
+//
+// animateCard();
 
 // popup
 document.querySelector('.gide__list-btn').addEventListener('click', function() {
@@ -26,3 +26,21 @@ document.querySelector('.gide__popup-close').addEventListener('click', function(
     document.querySelector('.gide__list').classList.remove('hide');
     document.querySelector('.gide__title').classList.remove('hide');
 });
+
+// 3D anim
+const cards = document.querySelectorAll(".team, .test"); // Выбираем все элементы с классами .team и .test
+let angle = 0;
+
+function animateCards() {
+    angle += 1; // Скорость движения
+    const rotateX = Math.sin(angle * (Math.PI / 180)) * 10; // Колебание по X
+    const rotateY = Math.cos(angle * (Math.PI / 180)) * 10; // Колебание по Y
+
+    cards.forEach(card => {
+        card.style.transform = `rotateY(${rotateY}deg) rotateX(${rotateX}deg)`;
+    });
+
+    requestAnimationFrame(animateCards);
+}
+
+animateCards();
