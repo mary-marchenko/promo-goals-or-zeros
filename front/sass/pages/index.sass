@@ -360,9 +360,6 @@ body
       &.active
         background: url('../img/predict/tabsScore-active-desk.png') no-repeat 100% 100%/cover
         background-size: 100% 100%
-        &:hover
-          background: url('../img/predict/tabsScore-hover-desk.png') no-repeat 100% 100%/cover
-          background-size: 100% 100%
       &.disabled
         background: url('../img/predict/tabsScore-disable-desk.png') no-repeat 100% 100%/cover
         background-size: 100% 100%
@@ -644,7 +641,7 @@ body
     display: flex
     flex-direction: column
     align-items: center
-    background: url('../img/table/bg-tab-desk.jpg') no-repeat 100% 100%/cover
+    background: url('../img/table/bg-tab-desk.png') no-repeat 100% 100%/cover
     @media screen and (max-width: 1300px)
       background: url("../img/table/bg-tab-tab.jpg") no-repeat 100% 100%/cover
     @media screen and (max-width: 600px)
@@ -677,14 +674,16 @@ body
         background: url('../img/tabsDateL-desk.png') no-repeat 0% 50%/cover
         @media screen and (max-width: 600px)
           background: url('../img/tabsDateL-mob.png') no-repeat 0% 50%/cover
+          background-size: 100% 100%
         &:hover
-          background: url('../img/predict/tabsScore-hover-desk.png') no-repeat 0% 100%/cover
+          background: url('../img/predict/tabsScore-hover-desk.png') no-repeat 0% 50%/cover
+          background-size: 100% 100%
         &.active
           background: url('../img/tabsDateL-active-desk.png') no-repeat 0% 50%/cover
-          &:hover
-            background: url('../img/predict/tabsScore-hover-desk.png') no-repeat 0% 100%/cover
+          background-size: 100% 100%
         &.disabled
-          background: url('../img/predict/tabsScore-disable-desk.png') no-repeat 0% 100%/cover
+          background: url('../img/predict/tabsScore-disable-desk.png') no-repeat 0% 50%/cover
+          background-size: 100% 100%
           pointer-events: none
           color: $grey
       &:last-child
@@ -738,8 +737,8 @@ body
         width: 161px
   &__body
     &-scroll
-      height: 540px
-      max-height: 540px
+      height: 597px
+      overflow: auto
       &::-webkit-scrollbar-thumb
         width: 4px
         background: $green
