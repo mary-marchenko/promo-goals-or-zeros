@@ -828,6 +828,7 @@ body
     &:nth-child(odd)
       background: rgba(0, 0, 85, 0.50)
     &.you
+      width: 99%
       border: 2px solid $magenta
       .table__row-item
         &:first-child
@@ -1034,9 +1035,12 @@ body
       width: 98px
     &-tnx
       width: 221px
-      z-index: 2
       position: relative
-      &:after
+      &-img
+        position: relative
+        z-index: 3
+        width: 100%
+      &::before
         z-index: 1
         content: ""
         position: absolute
@@ -1048,6 +1052,10 @@ body
     &-center
       width: 383px
       margin-bottom: 55px
+      &-img
+        position: relative
+        z-index: 3
+        width: 100%
     &-btn
       font-family: $font-montserrat-extraBold-it
       font-size: 24px

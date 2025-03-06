@@ -217,9 +217,10 @@ function setPopups(triggerButtons, popupClass) {
     });
 
     const closeButton = popup.querySelector('.popups__item-close');
+    const btnClose = popup.querySelector('.btn-close');
 
     popupsContainer.addEventListener("click", (e) => {
-        if (e.target === popupsContainer || e.target === closeButton) {
+        if (e.target === popupsContainer || e.target === closeButton || e.target === btnClose) {
             closePopup();
         }
     });

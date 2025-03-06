@@ -595,14 +595,16 @@
                     source(media="(max-width: 600px)" srcset="img/popups/popup-check-mob")
                     img(src="img/popups/popup-check-desk.png" alt="card")
             .popups__item-tnx
-                picture
-                    source(media="(max-width: 600px)" srcset="img/popups/popup-thanks-mob")
-                    img(src="img/popups/popup-thanks-desk.png" alt="card")
+                .popups__item-tnx-img
+                    picture
+                        source(media="(max-width: 600px)" srcset="img/popups/popup-thanks-mob")
+                        img(src="img/popups/popup-thanks-desk.png" alt="card")
             .popups__item-center
-                picture
-                    ssource(media="(max-width: 600px)" srcset="img/popup/popup-ok-mob")
-                    img(src="img/popups/popup-ok-desk.png" alt="card")
-            .popups__item-btn.btn Продовжити
+                .popups__item-center-img
+                    picture
+                        ssource(media="(max-width: 600px)" srcset="img/popup/popup-ok-mob")
+                        img(src="img/popups/popup-ok-desk.png" alt="card")
+            .popups__item-btn.btn.btn-close Продовжити
 
 
 
