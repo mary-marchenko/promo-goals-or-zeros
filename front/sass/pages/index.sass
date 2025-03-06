@@ -49,6 +49,9 @@ body
     letter-spacing: 0.48px
     text-transform: uppercase
     cursor: pointer
+._opacity
+  opacity: 0 !important
+  transition: opacity 2s ease-in-out
 .team
   display: block
   position: relative
@@ -56,9 +59,16 @@ body
   height: 554px
   transform-style: preserve-3d
   transition: transform .05s linear
-  &.predictTeam
+  &.scoreTeam
     width: 350px
     height: 460px
+  &.goalTeam
+    width: 269px
+    height: 345px
+    .team
+      &-text
+        top: 49%
+        width: 42%
   &-man
     position: absolute
     top: 51%
@@ -169,42 +179,6 @@ body
     &.hide
       filter: blur(4px)
       -webkit-backdrop-filter: blur(4px)
-  &__popup
-    z-index: 5
-    display: none
-    position: absolute
-    width: 640px
-    top: 48%
-    left: 50%
-    transform: translate(-50%, -50%)
-    background: url('../img/bg-popup-desk.jpg') no-repeat 50% 50%/contain
-    @media screen and (max-width: 600px)
-      background: url('../img/bg-popup-mob.jpg') no-repeat 50% 50%/contain
-    padding: 40px
-    &.active
-      display: block
-      backdrop-filter: none
-      -webkit-backdrop-filter: none
-      z-index: 100
-    &-close
-      position: absolute
-      right: 0
-      top: -28px
-      width: 34px
-      height: 34px
-      background: url('../img/close.svg') no-repeat 50% 50%/contain
-      cursor: pointer
-    &-txt
-      p
-        font-family: $font-montserrat-medium
-        font-size: 14px
-        color: $white
-        &:not(:last-child)
-          margin-bottom: 18px
-        span
-          font-family: $font-montserrat-semiBold
-          color: $magenta
-          text-shadow: 0px 2px 0px rgba(0, 0, 0, 0.25)
   &__list
     display: flex
     justify-content: center
@@ -321,19 +295,80 @@ body
     z-index: 5
   &__tabs
     display: flex
-  &__container
+  &__radio
+    position: relative
+    z-index: 5
     display: flex
+    input[type="radio"]
+      display: none
+      &:not(:checked) + label
+        width: 33px
+        height: 33px
+        display: block
+        cursor: pointer
+        transition: .4s ease-in-out
+        background: url("../img/predict/radiobutton.png") no-repeat 50% 50%/cover
+        &:hover
+          background: url("../img/predict/radiobutton-hover.png") no-repeat 50% 50%/cover
+      &:checked + label
+        width: 33px
+        height: 33px
+        display: block
+        cursor: pointer
+        background: url("../img/predict/radiobutton-active.png") no-repeat 100% 100%/cover
+    &-item
+      width: 240px
+      height: 80px
+      display: flex
+      flex-direction: column
+      align-items: center
+      justify-content: center
+      background: url("../img/predict/dots-card.png") no-repeat 100% 100%/cover
+      background-size: 100% 100%
+      &:nth-child(2)
+        margin: 0 17px
+      span
+        margin-top: 8px
+        font-family: $font-montserrat-bold
+        font-size: 14px
+        text-shadow: 0px 2px 0px rgba(0, 0, 0, 0.25)
+        color: $white
+        letter-spacing: 0.28px
+        text-transform: uppercase
+  &__container
     flex-direction: column
+    align-items: center
     margin-top: -115px
-    &.score-2
-      display: none
-    &.goal-1
-      display: none
-    &.goal-2
-      display: none
+    transition: opacity 0.3s ease-in-out
+    display: none
+    &.goalCont
+      margin-top: 33px
+      .predict
+        &__container
+          &-wrap
+            margin-top: -48px
+          &-calculations
+            margin-top: -35px
+    &-top
+      margin-top: -10px
+      width: 308px
+      color: $white
+      font-family: $font-montserrat-bold
+      font-size: 14px
+      line-height: 18px
+      text-transform: uppercase
+      text-align: center
     &-teams
       display: flex
       align-items: center
+    &-wrap
+      display: flex
+      align-items: center
+    &.active
+      display: flex
+  &__zero
+    width: 282px
+    margin: 0 -22px
   &__tabs
     display: flex
     flex-direction: column
@@ -375,18 +410,21 @@ body
       letter-spacing: 0.32px
       text-transform: uppercase
       background: url('../img/predict/tabsGoal-desk.png') no-repeat 0% 50%/cover
+      background-size: 100% 100%
       @media screen and (max-width: 600px)
         background: url('../img/predict/tabsGoal-mob.png') no-repeat 0% 50%/cover
+        background-size: 100% 100%
       &:hover
         background: url('../img/predict/tabsGoal-hover-desk.png') no-repeat 0% 100%/cover
+        background-size: 100% 100%
       &.active
         background: url('../img/predict/tabsGoal-active-desk.png') no-repeat 0% 50%/cover
-        &:hover
-          background: url('../img/predict/tabsGoal-hover-desk.png') no-repeat 0% 100%/cover
+        background-size: 100% 100%
       &.disabled
         background: url('../img/predict/tabsGoal-disable-desk.png') no-repeat 100% 100%/cover
         pointer-events: none
         color: $grey
+        background-size: 100% 100%
     &-bottom
       display: flex
       flex-direction: column
@@ -411,18 +449,20 @@ body
         text-shadow: 0px 2px 0px rgba(0, 0, 0, 0.25)
         transition: .4s ease-in-out
         background: url('../img/tabsDateL-desk.png') no-repeat 0% 50%/cover
+        background-size: 100% 100%
         @media screen and (max-width: 600px)
           background: url('../img/tabsDateL-mob.png') no-repeat 0% 50%/cover
+          background-size: 100% 100%
         &:hover
           background: url('../img/predict/tabsScore-hover-desk.png') no-repeat 0% 100%/cover
         &.active
           background: url('../img/tabsDateL-active-desk.png') no-repeat 0% 50%/cover
-          &:hover
-            background: url('../img/predict/tabsScore-hover-desk.png') no-repeat 0% 100%/cover
+          background-size: 100% 100%
         &.disabled
           background: url('../img/predict/tabsScore-disable-desk.png') no-repeat 0% 100%/cover
           pointer-events: none
           color: $grey
+          background-size: 100% 100%
       &:last-child
         cursor: pointer
         padding: 13px 24px 13px 47px
@@ -432,18 +472,21 @@ body
         text-shadow: 0px 2px 0px rgba(0, 0, 0, 0.25)
         transition: .4s ease-in-out
         background: url('../img/tabsDateR-desk.png') no-repeat 100% 50%/cover
+        background-size: 100% 100%
         @media screen and (max-width: 600px)
           background: url('../img/tabsDateR-mob.png') no-repeat 100% 50%/cover
+          background-size: 100% 100%
         &:hover
           background: url('../img/predict/tabsGoal-hover-desk.png') no-repeat 100% 100%/cover
+          background-size: 100% 100%
         &.active
           background: url('../img/tabsDateR-active-desk.png') no-repeat 100% 50%/cover
-          &:hover
-            background: url('../img/predict/tabsGoal-hover-desk.png') no-repeat 100% 100%/cover
+          background-size: 100% 100%
         &.disabled
           background: url('../img/predict/tabsGoal-disable-desk.png') no-repeat 100% 100%/cover
           pointer-events: none
           color: $grey
+          background-size: 100% 100%
   &__team
     display: flex
     flex-direction: column
@@ -462,14 +505,17 @@ body
       display: block
       width: 77px
       height: 50px
-      background: url('../img/predict/plus.png') no-repeat 100% 100%/cover
+      background: url('../img/predict/minus.png') no-repeat 100% 100%/cover
       background-size: 100% 100%
       &.active
-        background: url('../img/predict/plus-active.png') no-repeat 100% 100%/cover
+        background: url('../img/predict/minus-active.png') no-repeat 100% 100%/cover
         background-size: 100% 100%
     &-number
       font-family: $font-oswald-Bold
       font-size: 60px
+      min-width: 60px
+      display: flex
+      justify-content: center
       text-transform: uppercase
       letter-spacing: 1.2px
       background: linear-gradient(170deg, #FFF 27.18%, #8DC5FF 42.8%, #FFF 59.36%, #8DC5FF 78.93%)
@@ -483,10 +529,10 @@ body
       display: block
       width: 77px
       height: 50px
-      background: url('../img/predict/minus.png') no-repeat 100% 100%/cover
+      background: url('../img/predict/plus.png') no-repeat 100% 100%/cover
       background-size: 100% 100%
       &.active
-        background: url('../img/predict/minus-active.png') no-repeat 100% 100%/cover
+        background: url('../img/predict/plus-active.png') no-repeat 100% 100%/cover
         background-size: 100% 100%
   &__circle
     width: 282px
@@ -562,6 +608,26 @@ body
       height: 40px
       background: url('../img/predict/redlines.png') no-repeat 100% 100%/cover
       animation: moveBackground 10s linear infinite
+    &-goal
+      display: flex
+      justify-content: center
+      align-items: center
+      margin: 29px 0
+    &-text
+      font-family: $font-montserrat-semiBold
+      font-size: 14px
+      color: $grey-light
+      text-shadow: 0px 2px 0px rgba(0, 0, 0, 0.25)
+      margin-right: 12px
+    &-country
+      margin-right: 12px
+      font-family: $font-montserrat-bold
+      font-size: 16px
+      color: $white
+      line-height: 15px
+      letter-spacing: 0.32px
+      text-transform: uppercase
+      text-shadow: 0px 2px 0px rgba(0, 0, 0, 0.25)
     &-img
       height: 24px
     &-txt
@@ -575,6 +641,7 @@ body
       display: flex
       flex-direction: column
       align-items: center
+      margin-bottom: 25px
       background: linear-gradient(90deg, rgba(0, 1, 45, 0.00) 0%, #00012D 50.15%, rgba(1, 1, 38, 0.00) 100%)
     &-score
       display: flex
@@ -593,6 +660,9 @@ body
       align-items: center
       margin: 0 8px
       span
+        width: 24px
+        display: flex
+        justify-content: center
         color: $white
         font-size: 24px
         font-family: $font-oswald-semiBold
@@ -607,7 +677,6 @@ body
       font-size: 14px
       text-shadow: 0px 2px 0px rgba(0, 0, 0, 0.25)
       display: none
-      margin-bottom: 29px
       &.confirmed
         color: $green
       &.unconfirmed
@@ -641,7 +710,7 @@ body
     display: flex
     flex-direction: column
     align-items: center
-    background: url('../img/table/bg-tab-desk.png') no-repeat 100% 100%/cover
+    background: url('../img/table/bg-tab-desk.jpg') no-repeat 100% 100%/cover
     @media screen and (max-width: 1300px)
       background: url("../img/table/bg-tab-tab.jpg") no-repeat 100% 100%/cover
     @media screen and (max-width: 600px)
@@ -699,14 +768,15 @@ body
           background: url('../img/tabsDateR-mob.png') no-repeat 100% 50%/cover
         &:hover
           background: url('../img/predict/tabsGoal-hover-desk.png') no-repeat 100% 100%/cover
+          background-size: 100% 100%
         &.active
           background: url('../img/tabsDateR-active-desk.png') no-repeat 100% 50%/cover
-          &:hover
-            background: url('../img/predict/tabsGoal-hover-desk.png') no-repeat 100% 100%/cover
+          background-size: 100% 100%
         &.disabled
           background: url('../img/predict/tabsGoal-disable-desk.png') no-repeat 100% 100%/cover
           pointer-events: none
           color: $grey
+          background-size: 100% 100%
   &__head
     width: 100%
     display: flex
@@ -736,9 +806,13 @@ body
         padding-left: 20px
         width: 161px
   &__body
+    display: none
+    &.active
+      display: flex
     &-scroll
-      height: 597px
+      height: 598px
       overflow: auto
+      overflow-y: scroll
       &::-webkit-scrollbar-thumb
         width: 4px
         background: $green
@@ -797,10 +871,216 @@ body
         width: 36px
         height: 22px
         margin: 0 9px
+  &__bottom
+    z-index: 3
+    width: 640px
+    margin: 30px auto 24px
+    p
+      color: $grey
+      font-size: 14px
+      font-family: $font-montserrat-medium
+      text-align: center
+      &:first-child
+        margin-bottom: 14px
 
-
-
-
+.drop
+  max-width: 640px
+  margin: auto
+  width: 100%
+  padding: 10px 0
+  z-index: 10
+  .dropdown
+    outline: none!important
+    cursor: pointer
+    position: relative
+    width: 100%
+    text-align: start
+    summary::-webkit-details-marker
+      display: none
+    > summary
+      list-style: none
+    summary
+      font-family: $font-montserrat-bold
+      letter-spacing: 0.32px
+      text-shadow: 0px 2px 0px rgba(0, 0, 0, 0.25)
+      font-size: 16px
+      width: 100%
+      padding: 17px 0 17px 40px
+      outline: none!important
+      position: relative
+      display: flex
+      align-items: center
+      text-transform: uppercase
+      user-select: none
+      background: url('../img/table/drop-sum-desk.png') no-repeat 0 0/cover
+      background-size: 100% 100%
+      color: $white
+      z-index: 3
+      ::-webkit-details-marker
+        display: none
+      &:after
+        content: ''
+        background: url('../img/table/arrow.png') no-repeat 0 0/cover
+        width: 83px
+        height: 54px
+        position: absolute
+        right: 0
+        top: 0
+        display: block
+    &[open]
+      summary
+        &:after
+          transform: rotate(180deg)
+    .drop-txt
+      width: 638px
+      margin-left: 2px
+      padding: 80px 40px 40px 40px
+      margin-top: -50px
+      overflow-wrap: break-word
+      text-align: start
+      cursor: auto
+      background: url('../img/table/bg-rules.png') no-repeat 100% 100%/cover
+      background-size: 100% 100%
+      @media screen and (max-width: 600px)
+        background: url('../img/table/bg-rules-mob.png') no-repeat 100% 50%/cover
+        background-size: 100% 100%
+      &-list
+        max-height: 272px
+        overflow-y: scroll
+        padding-right: 20px
+        &::-webkit-scrollbar
+          width: 4px
+          background: rgba(63, 150, 111, 0.40)
+        &::-webkit-scrollbar-thumb
+          background: $green
+          width: 4px
+        p
+          font-family: $font-montserrat-medium
+          font-size: 14px
+          color: $white
+          margin-bottom: 25px
+          span
+            color: $magenta
+      //p, h2, h3, h4, h5, h6, strong, span
+      //  margin-bottom: 10px
+      //  //font-family: $font-suisse-intl-reg
+      //  display: block
+      //  font-size: 14px
+      //  line-height: 22px
+      //  //color: $gray
+      //  &:last-child
+      //    margin-bottom: 0
+      //  a
+      //    color: $green
+      //    text-decoration: underline
+      //    //font-family: $font-suisse-intl-reg
+      //    position: relative
+      //    &:hover
+      //      text-decoration: none
+.details
+  width: 640px
+  color: $grey
+  font-size: 14px
+  font-family: $font-montserrat-medium
+  text-align: center
+  margin: 14px 44px
+  span
+    text-decoration: underline
+.popups
+  position: fixed
+  top: 0
+  left: 0
+  z-index: 5
+  width: 100%
+  height: 100%
+  max-height: 100vh
+  background: rgba(#005, .9)
+  display: flex
+  align-items: center
+  justify-content: center
+  transition: opacity .6s ease
+  &__item
+    opacity: 0
+    position: absolute
+    pointer-events: none
+    display: flex
+    align-items: center
+    justify-content: center
+    flex-direction: column
+    transition: opacity .7s ease
+    &-body
+      background: url('../img/popups/bg-popup-desk.jpg') no-repeat 50% 50%/contain
+      @media screen and (max-width: 600px)
+        background: url('../img/popups/bg-popup-mob.jpg') no-repeat 50% 50%/contain
+      padding: 40px
+      width: 640px
+    &-txt
+      p
+        font-family: $font-montserrat-medium
+        font-size: 14px
+        color: $white
+        &:not(:last-child)
+          margin-bottom: 18px
+        span
+          font-family: $font-montserrat-semiBold
+          color: $magenta
+          text-shadow: 0px 2px 0px rgba(0, 0, 0, 0.25)
+    &-info
+      width: 768px
+      display: flex
+      flex-direction: column
+      align-items: center
+    &-top
+      width: 98px
+    &-tnx
+      width: 221px
+      z-index: 2
+      position: relative
+      &:after
+        z-index: 1
+        content: ""
+        position: absolute
+        top: 37px
+        left: -112%
+        width: 760px
+        height: 80px
+        background: url('../../img/predict/redlines.png') no-repeat 50% 50%/cover
+    &-center
+      width: 383px
+      margin-bottom: 55px
+    &-btn
+      font-family: $font-montserrat-extraBold-it
+      font-size: 24px
+      letter-spacing: 0.48px
+      text-shadow: 0px 3px 0px #3F966F
+      color: $white
+      text-transform: uppercase
+    &-close
+      right: 0
+      top: -30px
+      width: 34px
+      min-height: 34px
+      background: url("../img/close.svg") no-repeat 50% 50%/contain
+      margin-bottom: 5px
+      cursor: pointer
+      position: absolute
+      &:hover
+        cursor: pointer
+      &.closeConf
+        top: -95px
+        right: 25px
+  &._opacity
+    pointer-events: none
+  &.gidePopup
+    .gidePopup
+      opacity: 1
+      position: relative
+      pointer-events: initial
+  &._confirmPopup
+    ._confirmPopup
+      opacity: 1
+      position: relative
+      pointer-events: initial
 
 
 
