@@ -8,7 +8,7 @@ $white: #FFF
 $grey-light: #FFFFFFCC
 $grey:  #FFFFFF66
 
-$font-montserrat-medium: Montserrat-Medium, sans-serif // 500
+$font-montserrat-medium: Montserratƒ-Medium, sans-serif // 500
 $font-montserrat-semiBold: Montserrat-SemiBold, sans-serif // 600
 $font-montserrat-bold: Montserrat-Bold, sans-serif // 700
 $font-montserrat-extraBold-it: Montserrat-ExtraBoldItalic, sans-serif // 800
@@ -26,7 +26,7 @@ body
     max-width: 100%
     height: auto
 
-.wrapper
+.wrapp
   width: 1568px
   margin: 0 auto
   display: flex
@@ -83,13 +83,13 @@ body
     width: 43%
   &.team1
     background: url('../img/teams/card-1-desk.png') no-repeat 100% 100%/cover
-    @media screen and (max-width: 1300px)
+    @media screen and (max-width: 1050px)
       background: url("../img/teams/card-1-tab.png") no-repeat 100% 100%/cover
     @media screen and (max-width: 600px)
       background: url("../img/teams/card-1-mob.png") no-repeat 100% 100%/cover
   &.team2
     background: url('../img/teams/card-2-desk.png') no-repeat 100% 100%/cover
-    @media screen and (max-width: 1300px)
+    @media screen and (max-width: 1050px)
       background: url("../img/teams/card-2-tab.png") no-repeat 100% 100%/cover
     @media screen and (max-width: 600px)
       background: url("../img/teams/card-2-mob.png") no-repeat 100% 100%/cover
@@ -102,14 +102,14 @@ body
   overflow: hidden
 .promo
   width: 100%
-  margin-bottom: 100px
-  background: url('../img/promo/bgBack-1.png') no-repeat 100% 0%/cover
-  .wrapper
-    background: url('../img/promo/bg-1-desk.jpg') no-repeat 100% 100%/cover
-    @media screen and (max-width: 1300px)
-      background: url("../img/bg-1-tab.jpg") no-repeat 100% 100%/cover
+  background: url('../img/promo/bgBack-1.png') no-repeat center top
+  background-size: auto 746px
+  .wrapp
+    background: url('../img/promo/bg-1-desk.jpg') no-repeat 50% 50%/cover
+    @media screen and (max-width: 1050px)
+      background: url("../img/promo/bg-1-tab.jpg") no-repeat 50% 50%/cover
     @media screen and (max-width: 600px)
-      background: url("../img/bg-1-mob.jpg") no-repeat 100% 100%/cover
+      background: url("../img/promo/bg-1-mob.jpg") no-repeat 50% -205px/cover
     &:after
       content: ""
       position: absolute
@@ -118,6 +118,8 @@ body
       width: 100%
       height: 193px
       background: linear-gradient(180deg, rgba(0, 0, 85, 0.00) 0%, #005 100%)
+  &.promoPos
+    margin-bottom: 100px
   &__title
     display: none
   &__match
@@ -126,6 +128,8 @@ body
     &-title
       width: 385px
       margin: 41px 30px 0 20px
+    &-circle
+      display: none
   &__prize
     display: flex
     flex-direction: column
@@ -145,6 +149,7 @@ body
       margin-bottom: 15px
     &-btn
       margin-bottom: 35px
+      padding: 24px 64px
       .btn-text
         font-size: 24px
     &-bonusTxt
@@ -166,13 +171,14 @@ body
       text-align: center
 .gide
   width: 100%
-  padding-bottom: 80px
+  padding-bottom: 92px
   display: flex
   flex-direction: column
   justify-content: center
   align-items: center
   position: relative
   background: url('../img/gide/bgBack-2.png') no-repeat 50% 50%/cover
+  background-size: auto 815px
   &__title
     width: 412px
     margin: 0 auto 62px
@@ -185,13 +191,36 @@ body
     &.hide
       filter: blur(4px)
       -webkit-backdrop-filter: blur(4px)
+    &-item
+      position: relative
+      &:after
+        content: ""
+        position: absolute
+        bottom: -40px
+        left: 56px
+        width: 270px
+        height: 50px
+        background: url('../img/gide/decor-elips.png') no-repeat 50% 50%/cover
+      &:nth-child(2)
+        margin: 0 30px
+    &-text
+      display: none
+      font-family: $font-montserrat-bold
+      font-size: 14px
+      text-shadow: 0px 1.335px 0px rgba(0, 0, 0, 0.25)
+      color: $white
+      letter-spacing: 0.28px
+      text-transform: uppercase
+      padding-top: 17px
+      z-index: 2
+      width: 180px
     &-card
       position: relative
       width: 375px
       height: 382px
       transform-style: preserve-3d
       transition: transform .05s linear
-      &:nth-child(1)
+      &.card1
         &:after
           z-index: 1
           content: ""
@@ -203,8 +232,7 @@ body
           background: url('../img/gide/line-gideCard1.png') no-repeat 100% 100%/contain
           @media screen and (max-width: 600px)
             background: url('../img/gide/line-gide-mob.png') no-repeat 100% 100%/contain
-      &:nth-child(2)
-        margin: 0 30px
+      &.card2
         &:after
           content: ""
           position: absolute
@@ -215,7 +243,7 @@ body
           background: url('../img/gide/line-gideCard2.png') no-repeat 100% 100%/contain
           @media screen and (max-width: 600px)
             background: url('../img/gide/line-gide-mob.png') no-repeat 100% 100%/contain
-      &:nth-child(3)
+      &.card3
         &:after
           content: ""
           position: absolute
@@ -239,21 +267,23 @@ body
     &-btn
       z-index: 4
       position: absolute
-      bottom: -10px
-      transform: translateX(35%)
+      bottom: -19px
+      transform: translateX(39%)
       padding: 8px 26px
       width: max-content
       .btn-text
         font-size: 20px
         letter-spacing: 0.8px
 .predict
+  z-index: 1
   position: relative
   width: 100%
-  background: url('../img/predict/bgBack-3.jpg') no-repeat 100% 0%/cover
+  background: url('../img/predict/bgBack-3.jpg') no-repeat center top
+  background-size: auto 954px
   &:after
     content: ""
     position: absolute
-    bottom: 0
+    bottom: -16px
     left: 0
     width: 100%
     height: 180px
@@ -265,40 +295,37 @@ body
     top: -1px
     left: 0
     width: 100%
-    height: 180px
+    height: 198px
     background: linear-gradient(0deg, rgba(0, 0, 85, 0.00) 0%, #005 100%)
-  .wrapper
-    position: relative
-    z-index: 1
+  &.predictPos
+    margin-top: 50px
+  .wrapp
     display: flex
     flex-direction: column
     align-items: center
-    background: url('../img/predict/bg-2-desk.jpg') no-repeat 100% 100%/cover
-    @media screen and (max-width: 1300px)
-      background: url("../img/predict/bg-2-tab.jpg") no-repeat 100% 100%/cover
+    background: url('../img/predict/bg-2-desk.jpg') no-repeat 37% 21px/cover
+    @media screen and (max-width: 1050px)
+      background: url("../img/predict/bg-2-tab.jpg") no-repeat 50% 0%/cover
+      background-size: auto 1191px
     @media screen and (max-width: 600px)
-      background: url("../img/predict/bg-2-mob.jpg") no-repeat 100% 100%/cover
-    &:after
-      content: ""
-      position: absolute
-      top: 236px
-      left: 28px
-      width: 96%
-      height: 52px
-      background: linear-gradient(90deg, rgba(0, 1, 45, 0.00) 0%, rgba(0, 1, 45, 0.90) 49.73%, rgba(1, 1, 38, 0.00) 100%)
+      background: url("../img/predict/bg-2-mob.jpg") no-repeat 50% 0/cover
   &__title
-    margin-top: 111px
+    margin-top: 50px
     margin-bottom: 45px
     width: 576px
-    position: relative
     display: block
+    position: relative
     z-index: 5
+    &-img
+      position: relative
+      z-index: 5
   &__tabs
     display: flex
   &__radio
     position: relative
     z-index: 5
     display: flex
+    margin-bottom: 10px
     input[type="radio"]
       display: none
       &:not(:checked) + label
@@ -326,7 +353,7 @@ body
       background: url("../img/predict/dots-card.png") no-repeat 100% 100%/cover
       background-size: 100% 100%
       &:nth-child(2)
-        margin: 0 17px
+        margin: 0 21px 0 8px
       span
         margin-top: 8px
         font-family: $font-montserrat-bold
@@ -373,8 +400,11 @@ body
     display: flex
     flex-direction: column
     z-index: 2
+    position: relative
     &-global
       display: flex
+      z-index: 3
+      position: relative
     &-score
       cursor: pointer
       transition: .4s ease-in-out
@@ -383,6 +413,7 @@ body
       text-shadow: 0px 2px 0px rgba(0, 0, 0, 0.25)
       font-family: $font-montserrat-bold
       letter-spacing: 0.32px
+      font-size: 16px
       text-transform: uppercase
       background: url('../img/predict/tabsScore-desk.png') no-repeat 100% 100%/cover
       background-size: 100% 100%
@@ -405,6 +436,7 @@ body
       transition: .4s ease-in-out
       padding: 16px 34px 16px 30px
       color: $white
+      font-size: 16px
       text-shadow: 0px 2px 0px rgba(0, 0, 0, 0.25)
       font-family: $font-montserrat-bold
       letter-spacing: 0.32px
@@ -436,18 +468,27 @@ body
       color: $white
       display: flex
       justify-content: center
+      &:after
+        z-index: 1
+        content: ""
+        position: absolute
+        top: 0
+        left: -100%
+        width: 300%
+        height: 52px
+        background: linear-gradient(90deg, rgba(0, 1, 45, 0.00) 0%, rgba(0, 1, 45, 0.90) 49.73%, rgba(1, 1, 38, 0.00) 100%)
     &-dates
       display: flex
       justify-content: center
     &-date
+      cursor: pointer
+      font-family: $font-montserrat-bold
+      color: $white
+      font-size: 18px
+      text-shadow: 0px 2px 0px rgba(0, 0, 0, 0.25)
+      transition: .4s ease-in-out
       &:first-child
-        cursor: pointer
         padding: 13px 24px 13px 47px
-        font-family: $font-montserrat-bold
-        color: $white
-        font-size: 18px
-        text-shadow: 0px 2px 0px rgba(0, 0, 0, 0.25)
-        transition: .4s ease-in-out
         background: url('../img/tabsDateL-desk.png') no-repeat 0% 50%/cover
         background-size: 100% 100%
         @media screen and (max-width: 600px)
@@ -464,13 +505,7 @@ body
           color: $grey
           background-size: 100% 100%
       &:last-child
-        cursor: pointer
-        padding: 13px 24px 13px 47px
-        font-family: $font-montserrat-bold
-        color: $white
-        font-size: 18px
-        text-shadow: 0px 2px 0px rgba(0, 0, 0, 0.25)
-        transition: .4s ease-in-out
+        padding: 13px 47px 13px 24px
         background: url('../img/tabsDateR-desk.png') no-repeat 100% 50%/cover
         background-size: 100% 100%
         @media screen and (max-width: 600px)
@@ -500,14 +535,15 @@ body
       height: 90px
       background: url('../img/predict/dots-card.png') no-repeat 100% 100%/cover
     &-decrease
-      z-index: 2
+      z-index: 5
       cursor: pointer
       display: block
       width: 77px
       height: 50px
       background: url('../img/predict/minus.png') no-repeat 100% 100%/cover
       background-size: 100% 100%
-      &.active
+      transition: background 0.7s
+      &:active
         background: url('../img/predict/minus-active.png') no-repeat 100% 100%/cover
         background-size: 100% 100%
     &-number
@@ -525,13 +561,14 @@ body
       margin: 0 29px
     &-increase
       cursor: pointer
-      z-index: 2
+      z-index: 5
       display: block
       width: 77px
       height: 50px
       background: url('../img/predict/plus.png') no-repeat 100% 100%/cover
       background-size: 100% 100%
-      &.active
+      transition: background 0.7s
+      &:active
         background: url('../img/predict/plus-active.png') no-repeat 100% 100%/cover
         background-size: 100% 100%
   &__circle
@@ -543,6 +580,7 @@ body
       flex-direction: column
       align-items: center
       margin-top: -100px
+      z-index: 3
   &__info
     margin-bottom: 16px
     margin-top: 22px
@@ -612,7 +650,7 @@ body
       display: flex
       justify-content: center
       align-items: center
-      margin: 29px 0
+      margin: 19px 0
     &-text
       font-family: $font-montserrat-semiBold
       font-size: 14px
@@ -684,10 +722,10 @@ body
       &.active
         display: flex
 .table
-  margin-top: 119px
   position: relative
   width: 100%
-  background: url('../img/table/bgBack-4.png') no-repeat 100% 0%/cover
+  background: url('../img/table/bgBack-4.png') no-repeat 50% 58%/cover
+  background-size: auto 1188px
   &:before
     z-index: 1
     content: ""
@@ -706,15 +744,18 @@ body
     width: 100%
     height: 178px
     background: linear-gradient(180deg, rgba(0, 0, 85, 0.00) 0%, #005 100%)
-  .wrapper
+  &.tablePos
+    margin-top: 100px
+  .wrapp
     display: flex
     flex-direction: column
     align-items: center
-    background: url('../img/table/bg-tab-desk.jpg') no-repeat 100% 100%/cover
-    @media screen and (max-width: 1300px)
-      background: url("../img/table/bg-tab-tab.jpg") no-repeat 100% 100%/cover
+    background: url('../img/table/bg-tab-desk.jpg') no-repeat 50% 50%/cover
+    @media screen and (max-width: 1050px)
+      background: url("../img/table/bg-tab-tab.jpg") no-repeat 50% 50%/cover
     @media screen and (max-width: 600px)
-      background: url("../img/table/bg-tab-mob.png") no-repeat 100% 100%/cover
+      background: url("../img/table/bg-tab-mob.jpg") no-repeat 50% 0%/cover
+      background-size: 100% 550px
   &__title
     width: 356px
     margin: 44px auto 40px
@@ -725,7 +766,7 @@ body
     padding: 0 20px
     background: url('../img/table/table-bg.jpg') no-repeat 100% 100%/cover
     @media screen and (max-width: 600px)
-      background: url("../img/table/table-bd-mob.png") no-repeat 100% 100%/cover
+      background: url("../img/table/table-bg-mob.jpg") no-repeat 50% 50%/cover
   &__tabs
     display: flex
     justify-content: center
@@ -757,7 +798,7 @@ body
           color: $grey
       &:last-child
         cursor: pointer
-        padding: 13px 24px 13px 47px
+        padding: 13px 47px 13px 24px
         font-family: $font-montserrat-bold
         color: $white
         font-size: 18px
@@ -875,7 +916,7 @@ body
   &__bottom
     z-index: 3
     width: 640px
-    margin: 30px auto 24px
+    margin: 30px auto 14px
     p
       color: $grey
       font-size: 14px
@@ -883,7 +924,6 @@ body
       text-align: center
       &:first-child
         margin-bottom: 14px
-
 .drop
   max-width: 640px
   margin: auto
@@ -955,7 +995,7 @@ body
         &::-webkit-scrollbar-thumb
           background: $green
           width: 4px
-        p
+        *
           font-family: $font-montserrat-medium
           font-size: 14px
           color: $white
@@ -979,12 +1019,12 @@ body
       //    &:hover
       //      text-decoration: none
 .details
-  width: 640px
+  width: 645px
   color: $grey
   font-size: 14px
   font-family: $font-montserrat-medium
   text-align: center
-  margin: 14px 44px
+  padding: 24px 0 44px
   span
     text-decoration: underline
 .popups
@@ -1011,7 +1051,7 @@ body
     transition: opacity .7s ease
     &-body
       background: url('../img/popups/bg-popup-desk.jpg') no-repeat 50% 50%/contain
-      @media screen and (max-width: 600px)
+      @media screen and (max-width: 700px)
         background: url('../img/popups/bg-popup-mob.jpg') no-repeat 50% 50%/contain
       padding: 40px
       width: 640px
@@ -1045,17 +1085,20 @@ body
         content: ""
         position: absolute
         top: 37px
-        left: -112%
+        left: -119%
         width: 760px
         height: 80px
         background: url('../../img/predict/redlines.png') no-repeat 50% 50%/cover
     &-center
-      width: 383px
-      margin-bottom: 55px
-      &-img
-        position: relative
-        z-index: 3
-        width: 100%
+      z-index: 3
+      font-family: $font-oswald-Bold
+      font-size: 32px
+      letter-spacing: 0.64px
+      text-transform: uppercase
+      color: $white
+      margin-bottom: 48px
+      span
+        color: $magenta
     &-btn
       font-family: $font-montserrat-extraBold-it
       font-size: 24px
@@ -1063,6 +1106,7 @@ body
       text-shadow: 0px 3px 0px #3F966F
       color: $white
       text-transform: uppercase
+      z-index: 3
     &-close
       right: 0
       top: -30px
