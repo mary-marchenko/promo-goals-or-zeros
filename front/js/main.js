@@ -1,24 +1,24 @@
 // 3D anim
-// const cards = document.querySelectorAll(".team, .animCard, .animRight"); // Добавляем .animRight
-// let angle = 0;
-//
-// function animateCards() {
-//     angle += 0.9; // Скорость движения
-//     const rotateX = Math.sin(angle * (Math.PI / 180)) * 10; // Колебание по X
-//     const rotateY = Math.cos(angle * (Math.PI / 180)) * 10; // Колебание по Y
-//
-//     cards.forEach(card => {
-//         if (card.classList.contains("animRight")) {
-//             // Для .animRight меняем направление вращения
-//             card.style.transform = `rotateY(${-rotateY}deg) rotateX(${-rotateX}deg)`;
-//         } else {
-//             card.style.transform = `rotateY(${rotateY}deg) rotateX(${rotateX}deg)`;
-//         }
-//     });
-//
-//     requestAnimationFrame(animateCards);
-// }
-// animateCards();
+const cards = document.querySelectorAll(".team, .animCard, .animRight"); // Добавляем .animRight
+let angle = 0;
+
+function animateCards() {
+    angle += 0.9; // Скорость движения
+    const rotateX = Math.sin(angle * (Math.PI / 180)) * 10; // Колебание по X
+    const rotateY = Math.cos(angle * (Math.PI / 180)) * 10; // Колебание по Y
+
+    cards.forEach(card => {
+        if (card.classList.contains("animRight")) {
+            // Для .animRight меняем направление вращения
+            card.style.transform = `rotateY(${-rotateY}deg) rotateX(${-rotateX}deg)`;
+        } else {
+            card.style.transform = `rotateY(${rotateY}deg) rotateX(${rotateX}deg)`;
+        }
+    });
+
+    requestAnimationFrame(animateCards);
+}
+animateCards();
 
 // predict tabs
 document.addEventListener("DOMContentLoaded", function() {
