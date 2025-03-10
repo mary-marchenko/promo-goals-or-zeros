@@ -1,11 +1,18 @@
+button.menu-btn menu
+.menu-test
+    button.dark-btn dark
+    button.lng-btn en
 .fav-page
     .promo.promoPos
         .wrapp
             //mob
             .promo__title
-                picture
+                picture.uk
                     source(media="(max-width: 600px)" srcset="img/promo/titleText-mob.png")
                     img(src="img/promo/titleText-tab.png" alt="text")
+                picture.en
+                    source(media="(max-width: 600px)" srcset="img/promo/titleText-mob-en.png")
+                    img(src="img/promo/titleText-tab-en.png" alt="text")
             .promo__match
                 .promo__team
                     .team.team1.animRight
@@ -15,28 +22,39 @@
                                 source(media="(max-width: 1050px)" srcset="img/teams/man-ukr1-tab.png")
                                 img(src="img/teams/man-ukr1-desk.png" alt="footballer")
                         .team-text
-                            picture
+                            picture.uk
                                 source(media="(max-width: 600px)" srcset="img/teams/text-ukr-mob.png")
                                 source(media="(max-width: 1050px)" srcset="img/teams/text-ukr-tab.png")
                                 img(src="img/teams/text-ukr-desk.png" alt="text")
+                            picture.en
+                                source(media="(max-width: 600px)" srcset="img/teams/text-ukr-mob-en.png")
+                                source(media="(max-width: 1050px)" srcset="img/teams/text-ukr-tab-en.png")
+                                img(src="img/teams/text-ukr-desk-en.png" alt="text")
                 .promo__match-title
-                    img(src="img/promo/titleText-desk.png" alt="text")
+                    picture.uk
+                        img(src="img/promo/titleText-desk.png" alt="text")
+                    picture.en
+                        img(src="img/promo/titleText-desk-en.png" alt="text")
                 .promo__match-circle
                     picture
                         source(media="(max-width: 600px)" srcset="img/predict/circle-mob.png")
                         img(src="img/predict/circle-tab.png" alt="circle")
                 .promo__team
-                    .team.team2.test
+                    .team.team2
                         .team-man
                             picture
                                 source(media="(max-width: 600px)" srcset="img/teams/man-bel1-mob.png")
                                 source(media="(max-width: 1050px)" srcset="img/teams/man-bel1-tab.png")
                                 img(src="img/teams/man-bel1-desk.png" alt="footballer")
                         .team-text
-                            picture
+                            picture.uk
                                 source(media="(max-width: 600px)" srcset="img/teams/text-bel-mob.png")
                                 source(media="(max-width: 1050px)" srcset="img/teams/text-bel-tab.png")
                                 img(src="img/teams/text-bel-desk.png" alt="text")
+                            picture.en
+                                source(media="(max-width: 600px)" srcset="img/teams/text-bel-mob-en.png")
+                                source(media="(max-width: 1050px)" srcset="img/teams/text-bel-tab-en.png")
+                                img(src="img/teams/text-bel-desk-en.png" alt="text")
             .promo__prize
                 p.promo__prize-title(data-translate="prizeFond") #[span На кону] призовий фонд
                 .promo__prize-money
@@ -47,17 +65,24 @@
                 a(href="/login/" role="button").promo__prize-btn.btn #[span.btn-text(data-translate="loginBtn") Авторизуйся]
                 .promo__prize-bonusTxt(data-translate="prizeBonus") #[span +Бонус]<br> «Страховка ставки»
                 .promo__prize-bonusImg
-                    picture
+                    picture.uk
                         source(media="(max-width: 1050px)" srcset="img/promo/bonus-tab.png")
                         img(src="img/promo/bonus-desk.png" alt="prize")
-                p.promo__prize-conditions(data-translate="prizeDates") З 19 до 23 березня 2025 року роби свої прогнози на точні рахунки матчів, прогнозуй <br>перший гол, роби ставки від 200 ₴ та розділи призовий фонд.
+                    picture.en
+                        source(media="(max-width: 1050px)" srcset="img/promo/bonus-tab-en.png")
+                        img(src="img/promo/bonus-desk-en.png" alt="prize")
+                p.promo__prize-conditions(data-translate="prizeDates") З 19 до 23 березня 2025 року роби свої прогнози на точні рахунки матчів, прогнозуй перший гол, роби ставки від 200 ₴ та розділи призовий фонд.
     .gide
         .wrapp
             .gide__title
-                picture
+                picture.uk
                     source(media="(max-width: 600px)" srcset="img/gide/gideTitle-mob.png")
                     source(media="(max-width: 1050px)" srcset="img/gide/gideTitle-tab.png")
                     img(src="img/gide/gideTitle-desk.png" alt="text")
+                picture.en
+                    source(media="(max-width: 600px)" srcset="img/gide/gideTitle-mob-en.png")
+                    source(media="(max-width: 1050px)" srcset="img/gide/gideTitle-tab-en.png")
+                    img(src="img/gide/gideTitle-desk-en.png" alt="text")
             .gide__list
                 .gide__list-item
                     .gide__list-card.card1.animCard
@@ -67,10 +92,14 @@
                                 source(media="(max-width: 1050px)" srcset="img/gide/gideCard1-tab.png")
                                 img(src="img/gide/gideCard1-desk.png" alt="card")
                         .gide__list-txt
-                            picture
+                            picture.uk
                                 source(media="(max-width: 600px)" srcset="img/gide/gideTxt1-mob.png")
                                 source(media="(max-width: 1050px)" srcset="img/gide/gideTxt1-tab.png")
                                 img(src="img/gide/gideTxt1-desk.png" alt="text")
+                            picture.en
+                                source(media="(max-width: 600px)" srcset="img/gide/gideTxt1-mob.png")
+                                source(media="(max-width: 1050px)" srcset="img/gide/gideTxt1-tab-en.png")
+                                img(src="img/gide/gideTxt1-desk-en.png" alt="text")
                     .gide__list-text(data-translate="gideText1") Обери точний рахунок та команду
                     .gide__list-btn.btn #[span.btn-text(data-translate="MoreInfo") Детальніше]
                 .gide__list-item
@@ -81,10 +110,14 @@
                                 source(media="(max-width: 1050px)" srcset="img/gide/gideCard2-tab.png")
                                 img(src="img/gide/gideCard2-desk.png" alt="card")
                         .gide__list-txt
-                            picture
+                            picture.uk
                                 source(media="(max-width: 600px)" srcset="img/gide/gideTxt2-mob.png")
                                 source(media="(max-width: 1050px)" srcset="img/gide/gideTxt2-tab.png")
                                 img(src="img/gide/gideTxt2-desk.png" alt="text")
+                            picture.en
+                                source(media="(max-width: 600px)" srcset="img/gide/gideTxt2-mob.png")
+                                source(media="(max-width: 1050px)" srcset="img/gide/gideTxt2-tab-en.png")
+                                img(src="img/gide/gideTxt2-desk-en.png" alt="text")
                     .gide__list-text(data-translate="gideText2") Натисни кнопку Зробити прогноз
                 .gide__list-item
                     .gide__list-card.card.card3.animCard
@@ -94,19 +127,27 @@
                                 source(media="(max-width: 1050px)" srcset="img/gide/gideCard3-tab.png")
                                 img(src="img/gide/gideCard3-desk.png" alt="card")
                         .gide__list-txt
-                            picture
+                            picture.uk
                                 source(media="(max-width: 600px)" srcset="img/gide/gideTxt3-mob.png")
                                 source(media="(max-width: 1050px)" srcset="img/gide/gideTxt3-tab.png")
                                 img(src="img/gide/gideTxt3-desk.png" alt="text")
+                            picture.en
+                                source(media="(max-width: 600px)" srcset="img/gide/gideTxt3-mob.png")
+                                source(media="(max-width: 1050px)" srcset="img/gide/gideTxt3-tab-en.png")
+                                img(src="img/gide/gideTxt3-desk-en.png" alt="text")
                     .gide__list-text(data-translate="gideText3") Зроби ставку
     .predict.predictPos
         .wrapp
             .predict__title
                 .predict__title-img
-                    picture
+                    picture.uk
                         source(media="(max-width: 600px)" srcset="img/predict/predictTitle-mob.png")
                         source(media="(max-width: 1050px)" srcset="img/predict/predictTitle-tab.png")
                         img(src="img/predict/predictTitle-desk.png" alt="predict")
+                    picture.en
+                        source(media="(max-width: 600px)" srcset="img/predict/predictTitle-mob-en.png")
+                        source(media="(max-width: 1050px)" srcset="img/predict/predictTitle-tab-en.png")
+                        img(src="img/predict/predictTitle-desk-en.png" alt="predict")
             .predict__tabs
                 .predict__tabs-global
                     .predict__tabs-score.active(data-translate="predictScore") Прогноз на рахунок
@@ -127,14 +168,18 @@
                                     source(media="(max-width: 1050px)" srcset="img/teams/man-ukr1-tab.png")
                                     img(src="img/teams/man-ukr1-desk.png" alt="footballer")
                             .team-text
-                                picture
+                                picture.uk
                                     source(media="(max-width: 600px)" srcset="img/teams/text-ukr-tab.png")
                                     source(media="(max-width: 1050px)" srcset="img/teams/text-ukr-tab.png")
                                     img(src="img/teams/text-ukr-desk.png" alt="text")
+                                picture.en
+                                    source(media="(max-width: 600px)" srcset="img/teams/text-ukr-mob-en.png")
+                                    source(media="(max-width: 1050px)" srcset="img/teams/text-ukr-tab-en.png")
+                                    img(src="img/teams/text-ukr-desk-en.png" alt="text")
                         .predict__team-control
-                            .predict__team-increase.team1-plus(role="button")
-                            .predict__team-number 0
                             .predict__team-decrease.team1-minus(role="button")
+                            .predict__team-number 0
+                            .predict__team-increase.team1-plus(role="button")
                     .predict__circle
                         picture
                             source(media="(max-width: 600px)" srcset="img/predict/circle-mob.png")
@@ -148,14 +193,18 @@
                                     source(media="(max-width: 1050px)" srcset="img/teams/man-bel1-tab.png")
                                     img(src="img/teams/man-bel1-desk.png" alt="footballer")
                             .team-text
-                                picture
+                                picture.uk
                                     source(media="(max-width: 600px)" srcset="img/teams/text-bel-mob.png")
                                     source(media="(max-width: 1050px)" srcset="img/teams/text-bel-tab.png")
                                     img(src="img/teams/text-bel-desk.png" alt="text")
+                                picture.en
+                                    source(media="(max-width: 600px)" srcset="img/teams/text-bel-mob-en.png")
+                                    source(media="(max-width: 1050px)" srcset="img/teams/text-bel-tab-en.png")
+                                    img(src="img/teams/text-bel-desk-en.png" alt="text")
                         .predict__team-control
-                            .predict__team-increase.team2-plus(role="button")
+                            .predict__team-decrease.team1-minus(role="button")
                             .predict__team-number 0
-                            .predict__team-decrease.team2-minus(role="button")
+                            .predict__team-increase.team1-plus(role="button")
                 .predict__container-calculations
                     .predict__info(data-translate="popularPredict") #[span Найпопулярніші прогнози]
                     .predict__forecasts
@@ -190,14 +239,18 @@
                                     source(media="(max-width: 1050px)" srcset="img/teams/man-bel2-tab.png")
                                     img(src="img/teams/man-bel2-desk.png" alt="footballer")
                             .team-text
-                                picture
+                                picture.uk
                                     source(media="(max-width: 600px)" srcset="img/teams/text-bel-mob.png")
                                     source(media="(max-width: 1050px)" srcset="img/teams/text-bel-tab.png")
                                     img(src="img/teams/text-bel-desk.png" alt="text")
+                                picture.en
+                                    source(media="(max-width: 600px)" srcset="img/teams/text-bel-mob-en.png")
+                                    source(media="(max-width: 1050px)" srcset="img/teams/text-bel-tab-en.png")
+                                    img(src="img/teams/text-bel-desk-en.png" alt="text")
                         .predict__team-control
-                            .predict__team-increase.team1-plus(role="button")
-                            .predict__team-number 0
                             .predict__team-decrease.team1-minus(role="button")
+                            .predict__team-number 0
+                            .predict__team-increase.team1-plus(role="button")
                     .predict__circle
                         picture
                             source(media="(max-width: 600px)" srcset="img/predict/circle-mob.png")
@@ -211,10 +264,14 @@
                                     source(media="(max-width: 1050px)" srcset="img/teams/man-ukr2-tab.png")
                                     img(src="img/teams/man-ukr2-desk.png" alt="footballer")
                             .team-text
-                                picture
+                                picture.uk
                                     source(media="(max-width: 600px)" srcset="img/teams/text-ukr-mob.png")
                                     source(media="(max-width: 1050px)" srcset="img/teams/text-ukr-tab.png")
                                     img(src="img/teams/text-ukr-desk.png" alt="text")
+                                picture.en
+                                    source(media="(max-width: 600px)" srcset="img/teams/text-ukr-mob-en.png")
+                                    source(media="(max-width: 1050px)" srcset="img/teams/text-ukr-tab-en.png")
+                                    img(src="img/teams/text-ukr-desk-en.png" alt="text")
                         .predict__team-control
                             .predict__team-increase.team2-plus(role="button")
                             .predict__team-number 0
@@ -254,7 +311,11 @@
                                     source(media="(max-width: 1050px)" srcset="img/teams/man-ukr1-tab.png")
                                     img(src="img/teams/man-ukr1-desk.png" alt="footballer")
                             .team-text
-                                picture
+                                picture.uk
+                                    source(media="(max-width: 600px)" srcset="img/teams/text-ukr-mob.png")
+                                    source(media="(max-width: 1050px)" srcset="img/teams/text-ukr-tab.png")
+                                    img(src="img/teams/text-ukr-desk.png" alt="text")
+                                picture.en
                                     source(media="(max-width: 600px)" srcset="img/teams/text-ukr-mob.png")
                                     source(media="(max-width: 1050px)" srcset="img/teams/text-ukr-tab.png")
                                     img(src="img/teams/text-ukr-desk.png" alt="text")
@@ -272,10 +333,14 @@
                                     source(media="(max-width: 1050px)" srcset="img/teams/man-bel1-tab.png")
                                     img(src="img/teams/man-bel1-desk.png" alt="footballer")
                             .team-text
-                                picture
+                                picture.uk
                                     source(media="(max-width: 600px)" srcset="img/teams/text-bel-mob.png")
                                     source(media="(max-width: 1050px)" srcset="img/teams/text-bel-tab.png")
                                     img(src="img/teams/text-bel-desk.png" alt="text")
+                                picture.en
+                                    source(media="(max-width: 600px)" srcset="img/teams/text-bel-mob-en.png")
+                                    source(media="(max-width: 1050px)" srcset="img/teams/text-bel-tab-en.png")
+                                    img(src="img/teams/text-bel-desk-en.png" alt="text")
                 .predict__container-calculations
                     .predict__radio
                         .predict__radio-item
@@ -313,10 +378,14 @@
                                     source(media="(max-width: 1050px)" srcset="img/teams/man-ukr2-tab.png")
                                     img(src="img/teams/man-ukr2-desk.png" alt="footballer")
                             .team-text
-                                picture
+                                picture.uk
                                     source(media="(max-width: 600px)" srcset="img/teams/text-ukr-mob.png")
                                     source(media="(max-width: 1050px)" srcset="img/teams/text-ukr-tab.png")
                                     img(src="img/teams/text-ukr-desk.png" alt="text")
+                                picture.en
+                                    source(media="(max-width: 600px)" srcset="img/teams/text-ukr-mob-en.png")
+                                    source(media="(max-width: 1050px)" srcset="img/teams/text-ukr-tab-en.png")
+                                    img(src="img/teams/text-ukr-desk-en.png" alt="text")
                     .predict__zero
                         .predict__zero-img
                             picture
@@ -331,10 +400,14 @@
                                     source(media="(max-width: 1050px)" srcset="img/teams/man-bel2-tab.png")
                                     img(src="img/teams/man-bel2-desk.png" alt="footballer")
                             .team-text
-                                picture
+                                picture.uk
                                     source(media="(max-width: 600px)" srcset="img/teams/text-bel-mob.png")
                                     source(media="(max-width: 1050px)" srcset="img/teams/text-bel-tab.png")
                                     img(src="img/teams/text-bel-desk.png" alt="text")
+                                picture.en
+                                    source(media="(max-width: 600px)" srcset="img/teams/text-bel-mob-en.png")
+                                    source(media="(max-width: 1050px)" srcset="img/teams/text-bel-tab-en.png")
+                                    img(src="img/teams/text-bel-desk-en.png" alt="text")
                 .predict__container-calculations
                     .predict__radio
                         .predict__radio-item
@@ -363,7 +436,14 @@
     .table.tablePos
         .wrapp
             .table__title
-                img(src="img/table/table-title.png" alt="Table")
+                picture.uk
+                    source(media="(max-width: 600px)" srcset="img/table/table-title-mob.png")
+                    source(media="(max-width: 1050px)" srcset="img/table/table-title-tab.png")
+                    img(src="img/table/table-title-desk.png" alt="Table")
+                picture.en
+                    source(media="(max-width: 600px)" srcset="img/table/table-title-mob-en.png")
+                    source(media="(max-width: 1050px)" srcset="img/table/table-title-tab-en.png")
+                    img(src="img/table/table-title-desk-en.png" alt="Table")
             .table__wrap#results-table
                 .table__tabs
                     .table__tabs-date.date1.active 20.03 12:00
@@ -598,15 +678,18 @@
         .popups__item-close.closeConf
         .popups__item-info
             .popups__item-top
-                picture
+                picture.uk
                     source(media="(max-width: 600px)" srcset="img/popups/popup-check-mob.png")
                     img(src="img/popups/popup-check-desk.png" alt="card")
             .popups__item-tnx
                 .popups__item-tnx-img
-                    picture
+                    picture.uk
                         source(media="(max-width: 600px)" srcset="img/popups/popup-thanks-mob.png")
                         img(src="img/popups/popup-thanks-desk.png" alt="card")
-            .popups__item-center Твій прогноз #[span прийнятий]
+                    picture.en
+                        source(media="(max-width: 600px)" srcset="img/popups/popup-thanks-mob-en.png")
+                        img(src="img/popups/popup-thanks-desk-en.png" alt="card")
+            .popups__item-center(data-translate="popupPredict") Твій прогноз #[span прийнятий]
             .popups__item-btn.btn.btn-close(data-translate="continueBtn") Продовжити
 
 

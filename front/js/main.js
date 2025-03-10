@@ -135,3 +135,7 @@ function setPopups(triggerButtons, popupClass) {
 setPopups(document.querySelectorAll('.gide__list-btn'), 'gidePopup');
 setPopups(document.querySelectorAll('.predict__btn'), '_confirmPopup');
 
+// TEST
+document.querySelector('.dark-btn').addEventListener('click', () => {
+    document.body.classList.toggle('dark');
+});
