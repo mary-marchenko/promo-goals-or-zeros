@@ -2,7 +2,7 @@ button.menu-btn menu
 .menu-test
     button.dark-btn dark
     button.lng-btn en
-.fav-page
+.fav-page#goals-or-zeros
     .promo.promoPos
         .wrapp
             //mob
@@ -62,7 +62,9 @@ button.menu-btn menu
                         source(media="(max-width: 600px)" srcset="img/promo/prize-mob.png")
                         source(media="(max-width: 1050px)" srcset="img/promo/prize-tab.png")
                         img(src="img/promo/prize-desk.png" alt="prize")
-                a(href="/login/" role="button" data-translate="loginBtn").promo__prize-btn.btn Авторизуйся
+                a(href="/login/" role="button" data-translate="loginBtn").promo__prize-btn.btn.unauth-msg.hide Авторизуйся
+                div(role="button" data-translate="joinBtn").promo__prize-btn.btn.btn-join.hide Взяти участь
+                a(href="/login/" role="button" data-translate="playBtn").promo__prize-btn.btn.took-part.hide Зробити прогноз
                 .promo__prize-bonusTxt(data-translate="prizeBonus") #[span +Бонус]<br> «Страховка ставки»
                 .promo__prize-bonusImg
                     picture.uk
@@ -211,7 +213,9 @@ button.menu-btn menu
                         .predict__forecasts-item #[span 20%] 0-2
                         .predict__forecasts-item #[span 20%] 0-2
                         .predict__forecasts-item #[span 20%] 0-2
-                    .predict__btn.btn(data-translate="doPredicts") Зробити прогноз
+                    a(href="/login/" role="button" data-translate="loginBtn").predict__btn.btn.unauth-msg.hide Авторизуйся
+                    div(role="button" data-translate="joinBtn").predict__btn.btn.btn-join.hide Взяти участь
+                    a(href="/login/" role="button" data-translate="playBtn").predict__btn.btn.took-part.hide Зробити прогноз
                     .predict__last
                         .predict__last-title
                             .predict__last-img
@@ -273,16 +277,18 @@ button.menu-btn menu
                                     source(media="(max-width: 1050px)" srcset="img/teams/text-ukr-tab-en.png")
                                     img(src="img/teams/text-ukr-desk-en.png" alt="text")
                         .predict__team-control
-                            .predict__team-increase.team2-plus(role="button")
-                            .predict__team-number 0
                             .predict__team-decrease.team2-minus(role="button")
+                            .predict__team-number 0
+                            .predict__team-increase.team2-plus(role="button")
                 .predict__container-calculations
                     .predict__info(data-translate="popularPredict") #[span Найпопулярніші прогнози]
                     .predict__forecasts
                         .predict__forecasts-item #[span 20%] 0-2
                         .predict__forecasts-item #[span 20%] 0-2
                         .predict__forecasts-item #[span 20%] 0-2
-                    .predict__btn.btn(data-translate="doPredicts") Зробити прогноз
+                    a(href="/login/" role="button" data-translate="loginBtn").predict__btn.btn.unauth-msg.hide Авторизуйся
+                    div(role="button" data-translate="joinBtn").predict__btn.btn.btn-join.hide Взяти участь
+                    a(href="/login/" role="button" data-translate="playBtn").predict__btn.btn.took-part.hide Зробити прогноз
                     .predict__last
                         .predict__last-title
                             .predict__last-img
@@ -355,7 +361,9 @@ button.menu-btn menu
                             input(type="radio", name="сhoice", value="3", id="radio3")
                             label(for="radio3")
                             span(data-translate="choose") Обрати
-                    .predict__btn.btn(data-translate="doPredicts") Зробити прогноз
+                    a(href="/login/" role="button" data-translate="loginBtn").predict__btn.btn.unauth-msg.hide Авторизуйся
+                    div(role="button" data-translate="joinBtn").predict__btn.btn.btn-join.hide Взяти участь
+                    a(href="/login/" role="button" data-translate="playBtn").predict__btn.btn.took-part.hide Зробити прогноз
                     .predict__last
                         .predict__last-title
                             .predict__last-img
@@ -422,7 +430,9 @@ button.menu-btn menu
                             input(type="radio", name="сhoice", value="3", id="radio6")
                             label(for="radio6")
                             span(data-translate="choose") Обрати
-                    .predict__btn.btn(data-translate="doPredicts") Зробити прогноз
+                    a(href="/login/" role="button" data-translate="loginBtn").predict__btn.btn.unauth-msg.hide Авторизуйся
+                    div(role="button" data-translate="joinBtn").predict__btn.btn.btn-join.hide Взяти участь
+                    a(href="/login/" role="button" data-translate="playBtn").predict__btn.btn.took-part.hide Зробити прогноз
                     .predict__last
                         .predict__last-title
                             .predict__last-img
