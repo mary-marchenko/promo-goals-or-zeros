@@ -64,7 +64,7 @@ button.menu-btn menu
                         img(src="img/promo/prize-desk.png" alt="prize")
                 a(href="/login/" role="button" data-translate="loginBtn").promo__prize-btn.btn.unauth-msg.hide Авторизуйся
                 div(role="button" data-translate="joinBtn").promo__prize-btn.btn.btn-join.hide Взяти участь
-                a(href="/login/" role="button" data-translate="playBtn").promo__prize-btn.btn.took-part.hide Зробити прогноз
+                div(role="button" data-translate="playBtn").promo__prize-btn.btn.took-part.toPredict.hide Зробити прогноз
                 .promo__prize-bonusTxt(data-translate="prizeBonus") #[span +Бонус]<br> «Страховка ставки»
                 .promo__prize-bonusImg
                     picture.uk
@@ -138,7 +138,7 @@ button.menu-btn menu
                                 source(media="(max-width: 1050px)" srcset="img/gide/gideTxt3-tab-en.png")
                                 img(src="img/gide/gideTxt3-desk-en.png" alt="text")
                     .gide__list-text(data-translate="gideText3") Зроби ставку
-    .predict.predictPos
+    .predict.predictPos#predict
         .wrapp
             .predict__title
                 .predict__title-img

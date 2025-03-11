@@ -295,6 +295,17 @@
     setPopups(document.querySelectorAll('.gide__list-btn'), 'gidePopup');
     setPopups(document.querySelectorAll('.predict__btn'), '_confirmPopup');
 
+//go to predict
+    document.querySelector(".toPredict").addEventListener('click', function () {
+        const targetElement = document.getElementById("predict");
+        const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - 2;
+
+        window.scrollTo({
+            top: targetPosition,
+            behavior: 'smooth',
+        });
+    });
+
 // TEST
     document.querySelector('.dark-btn').addEventListener('click', () => {
         document.body.classList.toggle('dark');
