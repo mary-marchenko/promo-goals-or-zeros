@@ -3,7 +3,17 @@
         unauthMsgs = document.querySelectorAll('.unauth-msg'),
         participateBtns = document.querySelectorAll('.btn-join'),
         youAreInBtns = document.querySelectorAll('.took-part'),
-        mainPage = document.querySelector(".fav-page")
+        mainPage = document.querySelector(".fav-page"),
+        resultsTable = document.querySelector('#results-table'),
+        topResultsTable = document.querySelector('#results-table'),
+        resultsTableOther = document.querySelector('#results-table-other'),
+        tableNav = document.querySelectorAll(".results__nav-item"),
+        predictColumns = document.querySelectorAll(".table__column"),
+        moveLeft = document.querySelector(".table__move-left"),
+        moveRight = document.querySelector(".table__move-right"),
+        moveLeftResult = document.querySelector(".results__move-left"),
+        moveRightResult = document.querySelector(".results__move-right"),
+        tabsContainer = document.querySelector('.results__tab')
 
     let translateState = false
     let debug = false
@@ -157,6 +167,75 @@
 
     loadTranslations()
         .then(init)
+
+    // function refreshUsers() {
+    //     getData().then(users => {
+    //         if(!debug) {
+    //             renderUsers(users);
+    //         }
+    //     });
+    // }
+    // function renderUsers(users) {
+    //     populateUsersTable(users, userId);
+    //
+    // }
+    //
+    // function populateUsersTable(users, currentUserId) {
+    //     resultsTable.innerHTML = ''; // Очищуємо основну таблицю
+    //     resultsTableOther.innerHTML = ''; // Очищуємо додаткову таблицю
+    //
+    //     if (!users || !users.length) return; // Перевіряємо, чи є користувачі
+    //
+    //     // Знаходимо індекс поточного користувача
+    //     const currentUserIndex = users.findIndex(user => user.userid === currentUserId);
+    //
+    //     if (currentUserIndex !== -1) {
+    //         // Видаляємо currentUserId зі списку
+    //         users.splice(currentUserIndex, 1);
+    //     }
+    //
+    //     // Додаємо currentUserId на 11 позицію (індекс 10)
+    //     users.splice(10, 0, users.find(user => user.userid === currentUserId));
+    //
+    //     // Виводимо всіх користувачів у таблицю
+    //     users.forEach(user =>
+    //         displayUser(user, user.userid === currentUserId, resultsTable, users)
+    //     );
+    // }
+    //
+    // function displayUser(user, isCurrentUser, table, allUsers) {
+    //     const additionalUserRow = document.createElement('div');
+    //     additionalUserRow.classList.add('table__row');
+    //
+    //     const place = allUsers.indexOf(user) + 1;
+    //
+    //     let prizeKey;
+    //     prizeKey = getPrizeTranslationKey(place)
+    //
+    //     additionalUserRow.innerHTML = `
+    //     <div class="table__row-item">${isCurrentUser ? user.userid : maskUserId(user.userid)}</div>
+    //     <div class="table__row-item">
+    //         <span>${user.scoreLeft}</span>
+    //         <img src="img/vs.png" alt="clock">
+    //         <span>${user.scoreRight}</span>
+    //     </div>
+    //     <div class="table__row-item">${prizeKey ? translateKey(prizeKey) : ' - '}</div>
+    //     <div class="table__row-item">${bonusKey ? translateKey(bonusKey) : ' - '}</div>
+    // `;
+    //     if (isCurrentUser) {
+    //         const youBlock = document.createElement('div');
+    //         youBlock.setAttribute('data-translate', 'you');
+    //         youBlock.textContent = "Ти" // для тесту поки нема транслейтів
+    //         youBlock.classList.add('_your');
+    //         additionalUserRow.append(youBlock)
+    //         additionalUserRow.classList.add("_your")
+    //
+    //     }
+    //     table.append(additionalUserRow);
+    // }
+    // function maskUserId(userId) {
+    //     return "**" + userId.toString().slice(2);
+    // }
 
 
     // 3D anim

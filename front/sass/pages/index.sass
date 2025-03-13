@@ -1053,6 +1053,7 @@ body
     display: flex
     align-items: center
     width: 100%
+    position: relative
     &:nth-child(even)
       background: rgba(7, 2, 46, 0.80)
     &:nth-child(odd)
@@ -1063,6 +1064,21 @@ body
       .table__row-item
         &:first-child
           background: url('../img/table/bg-td-you.png') no-repeat 100% 100%/cover
+        &:nth-child(2)
+          width: 146px
+        &:last-child
+          width: 147px
+    &-you
+      left: 120px
+      top: 10px
+      position: absolute
+      min-width: 31px
+      max-width: 31px
+      color: $magenta
+      font-size: 18px
+      letter-spacing: 0.36px
+      font-family: $font-oswald-Bold
+      border-right: 0
     &-item
       display: flex
       align-items: center
