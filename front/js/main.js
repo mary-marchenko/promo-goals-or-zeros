@@ -399,7 +399,6 @@
     document.querySelector('.dark-btn').addEventListener('click', () => {
         document.body.classList.toggle('dark');
     });
-})()
 
     const lngBtn = document.querySelector(".lng-btn")
 
@@ -422,3 +421,5 @@
         }
         window.location.reload()
     })
+
+})()
