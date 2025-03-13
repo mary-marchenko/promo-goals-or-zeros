@@ -1,25 +1,20 @@
 (function () {
-    const apiURL = 'https://fav-prom.com/api_legendary_trophy',
+    const apiURL = 'https://fav-prom.com/api_goals_or_zeroes',
         unauthMsgs = document.querySelectorAll('.unauth-msg'),
         participateBtns = document.querySelectorAll('.btn-join'),
         youAreInBtns = document.querySelectorAll('.took-part'),
         mainPage = document.querySelector(".fav-page"),
         resultsTable = document.querySelector('#results-table'),
-        topResultsTable = document.querySelector('#results-table'),
-        resultsTableOther = document.querySelector('#results-table-other'),
-        tableNav = document.querySelectorAll(".results__nav-item"),
-        predictColumns = document.querySelectorAll(".table__column"),
-        moveLeft = document.querySelector(".table__move-left"),
-        moveRight = document.querySelector(".table__move-right"),
-        moveLeftResult = document.querySelector(".results__move-left"),
-        moveRightResult = document.querySelector(".results__move-right"),
-        tabsContainer = document.querySelector('.results__tab')
+        resultsTableOther = document.querySelector('#results-table-other')
 
-    let translateState = false
+    const cache = {};
+    let predictData = [];
+
+    let translateState = true
     let debug = false
 
-    // let locale = sessionStorage.getItem("locale") ?? "uk"
-    let locale = "uk"
+    let locale = sessionStorage.getItem("locale") ?? "uk"
+    // let locale = "uk"
 
     const ukLeng = document.querySelector('#ukLeng');
     const enLeng = document.querySelector('#enLeng');
@@ -168,74 +163,88 @@
     loadTranslations()
         .then(init)
 
-    // function refreshUsers() {
-    //     getData().then(users => {
-    //         if(!debug) {
-    //             renderUsers(users);
-    //         }
-    //     });
-    // }
-    // function renderUsers(users) {
-    //     populateUsersTable(users, userId);
-    //
-    // }
-    //
-    // function populateUsersTable(users, currentUserId) {
-    //     resultsTable.innerHTML = ''; // Очищуємо основну таблицю
-    //     resultsTableOther.innerHTML = ''; // Очищуємо додаткову таблицю
-    //
-    //     if (!users || !users.length) return; // Перевіряємо, чи є користувачі
-    //
-    //     // Знаходимо індекс поточного користувача
-    //     const currentUserIndex = users.findIndex(user => user.userid === currentUserId);
-    //
-    //     if (currentUserIndex !== -1) {
-    //         // Видаляємо currentUserId зі списку
-    //         users.splice(currentUserIndex, 1);
-    //     }
-    //
-    //     // Додаємо currentUserId на 11 позицію (індекс 10)
-    //     users.splice(10, 0, users.find(user => user.userid === currentUserId));
-    //
-    //     // Виводимо всіх користувачів у таблицю
-    //     users.forEach(user =>
-    //         displayUser(user, user.userid === currentUserId, resultsTable, users)
-    //     );
-    // }
-    //
-    // function displayUser(user, isCurrentUser, table, allUsers) {
-    //     const additionalUserRow = document.createElement('div');
-    //     additionalUserRow.classList.add('table__row');
-    //
-    //     const place = allUsers.indexOf(user) + 1;
-    //
-    //     let prizeKey;
-    //     prizeKey = getPrizeTranslationKey(place)
-    //
-    //     additionalUserRow.innerHTML = `
-    //     <div class="table__row-item">${isCurrentUser ? user.userid : maskUserId(user.userid)}</div>
-    //     <div class="table__row-item">
-    //         <span>${user.scoreLeft}</span>
-    //         <img src="img/vs.png" alt="clock">
-    //         <span>${user.scoreRight}</span>
-    //     </div>
-    //     <div class="table__row-item">${prizeKey ? translateKey(prizeKey) : ' - '}</div>
-    //     <div class="table__row-item">${bonusKey ? translateKey(bonusKey) : ' - '}</div>
-    // `;
-    //     if (isCurrentUser) {
-    //         const youBlock = document.createElement('div');
-    //         youBlock.setAttribute('data-translate', 'you');
-    //         youBlock.textContent = "Ти" // для тесту поки нема транслейтів
-    //         youBlock.classList.add('_your');
-    //         additionalUserRow.append(youBlock)
-    //         additionalUserRow.classList.add("_your")
-    //
-    //     }
-    //     table.append(additionalUserRow);
-    // }
-    // function maskUserId(userId) {
-    //     return "**" + userId.toString().slice(2);
-    // }
+    // table
+    function getData() {
+        const currentStage = STAGE_KEYS[selectedTab - 1];
+        if (cache[currentStage]) {
+            return Promise.resolve(cache[currentStage]);
+        }
+        return request(`/users/${currentStage}`).then(res => {
+            cache[currentStage] = res;
+            return res;
+        });
+    }
+
+    function refreshUsers() {
+        getData().then(users => {
+            if(!debug) {
+                renderUsers(users);
+            }
+        });
+    }
+    function renderUsers(users) {
+        populateUsersTable(users, userId);
+
+    }
+
+    function populateUsersTable(users, currentUserId) {
+        resultsTable.innerHTML = ''; // Очищуємо основну таблицю
+        resultsTableOther.innerHTML = ''; // Очищуємо додаткову таблицю
+
+        if (!users || !users.length) return; // Перевіряємо, чи є користувачі
+
+        // Знаходимо індекс поточного користувача
+        const currentUserIndex = users.findIndex(user => user.userid === currentUserId);
+
+        if (currentUserIndex !== -1) {
+            // Видаляємо currentUserId зі списку
+            users.splice(currentUserIndex, 1);
+        }
+
+        // Додаємо currentUserId на 11 позицію (індекс 10)
+        users.splice(10, 0, users.find(user => user.userid === currentUserId));
+
+        // Виводимо всіх користувачів у таблицю
+        users.forEach(user =>
+            displayUser(user, user.userid === currentUserId, resultsTable, users)
+        );
+    }
+
+    function displayUser(user, isCurrentUser, table, allUsers) {
+        const additionalUserRow = document.createElement('div');
+        additionalUserRow.classList.add('table__row');
+
+        const place = allUsers.indexOf(user) + 1;
+
+        let prizeKey;
+        prizeKey = getPrizeTranslationKey(place)
+        let bonusKey;
+        bonusKey = getBonusTranslationKey(place)
+
+        additionalUserRow.innerHTML = `
+        <div class="table__row-item">${isCurrentUser ? user.userid : maskUserId(user.userid)}</div>
+        <div class="table__row-item">
+            <span>${user.scoreLeft}</span>
+            <img src="img/vs.png" alt="vs">
+            <span>${user.scoreRight}</span>
+        </div>
+        <div class="table__row-item">${prizeKey ? translateKey(prizeKey) : ' - '}</div>
+        <div class="table__row-item">${bonusKey ? translateKey(bonusKey) : ' - '}</div>
+    `;
+        if (isCurrentUser) {
+            additionalUserRow.classList.add("you");
+            const youBlock = document.createElement('div');
+            youBlock.classList.add('table__row-you');
+            youBlock.setAttribute('data-translate', 'tableYou');
+            youBlock.textContent = "You";
+            additionalUserRow.insertBefore(youBlock, additionalUserRow.children[1])
+
+        }
+        table.append(additionalUserRow);
+    }
+    function maskUserId(userId) {
+        return "**" + userId.toString().slice(2);
+    }
 
 
     // 3D anim
@@ -329,13 +338,14 @@
             }
 
             document.querySelectorAll('.table__tabs-date').forEach(tab => tab.classList.remove('active'));
-
             this.classList.add('active');
 
             document.querySelectorAll('.table__body').forEach(content => content.classList.remove('active'));
 
             const bodyClass = this.classList.contains('date1') ? '.table__body.table1' : '.table__body.table2';
             document.querySelector(bodyClass).classList.add('active');
+
+            refreshUsers();
         });
     });
 
@@ -390,3 +400,25 @@
         document.body.classList.toggle('dark');
     });
 })()
+
+    const lngBtn = document.querySelector(".lng-btn")
+
+    lngBtn.addEventListener("click", () => {
+        if (sessionStorage.getItem("locale")) {
+            sessionStorage.removeItem("locale");
+        } else {
+            sessionStorage.setItem("locale", "en");
+        }
+        window.location.reload();
+    });
+
+    const authBtn = document.querySelector(".auth-btn")
+
+    authBtn.addEventListener("click", () =>{
+        if(userId){
+            sessionStorage.removeItem("userId")
+        }else{
+            sessionStorage.setItem("userId", "18908465")
+        }
+        window.location.reload()
+    })
