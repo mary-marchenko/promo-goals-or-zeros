@@ -658,11 +658,19 @@
         background: rgba(63, 150, 111, 0.40)
         width: 2px
     &__row
+      &-you
+        top: 4px
+        transform: rotate(270deg)
+        left: -10px
+        font-size: 9px
+        color: $white
+        letter-spacing: 0.24px
       &-item
         font-size: 11px
         height: 36px
         img
           width: 23px
+          min-width: 23px
           height: 14px
           margin: 0 3px
         &:nth-child(1)
@@ -685,6 +693,22 @@
       &.you
         width: 99%
         border: 1px solid $magenta
+        .table__row-item
+          &:first-child
+            width: 80px
+            min-width: 80px
+            padding-left: 12px
+            padding-right: 11px
+          &:nth-child(3)
+            width: 66px
+            padding-right: 10px
+            span
+              min-width: 10px
+              text-align: center
+          &:nth-child(4)
+            width: 81px
+            min-width: 81px
+            padding-right: 11px
     &__bottom
       width: 343px
       padding-top: 20px
