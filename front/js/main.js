@@ -23,6 +23,7 @@
     let i18nData = {};
 
     let userId;
+    userId = sessionStorage.getItem("userId") ?? null
     // userId = 100300268;
 
     if (ukLeng) locale = 'uk';
@@ -420,6 +421,18 @@
             sessionStorage.setItem("userId", "18908465")
         }
         window.location.reload()
-    })
+    });
+
+    const btnParticipante = document.querySelector(".btn-participante")
+
+    btnParticipante.addEventListener("click", () =>{
+        if(sessionStorage.getItem("userId")=="18908465"){
+            participateBtns.forEach(item => item.classList.add('hide'));
+            youAreInBtns.forEach(item => item.classList.remove('hide'));
+        }else{
+            sessionStorage.setItem("userId", "777")
+        }
+
+    });
 
 })()
