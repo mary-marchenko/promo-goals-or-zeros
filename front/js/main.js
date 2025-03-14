@@ -435,4 +435,24 @@
 
     });
 
+    document.querySelector('.btn-lastPred').addEventListener('click', function() {
+        document.querySelector('.predict__last').classList.toggle('hide');
+    });
+
+    setPopups(document.querySelectorAll('.btn-thenks'), '_confirmPopup');
+
+    document.querySelectorAll('.btn-predict').forEach(button => {
+        button.addEventListener('click', () => {
+            const unconfirmed = document.querySelector('.unconfirmed');
+            const confirmed = document.querySelector('.confirmed');
+
+            if (confirmed.classList.contains('active')) {
+                confirmed.classList.remove('active');
+                unconfirmed.classList.add('active');
+            } else {
+                unconfirmed.classList.remove('active');
+                confirmed.classList.add('active');
+            }
+        });
+    });
 })()
