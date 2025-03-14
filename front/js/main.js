@@ -383,7 +383,7 @@
     }
 
     setPopups(document.querySelectorAll('.gide__list-btn'), 'gidePopup');
-    setPopups(document.querySelectorAll('.predict__btn'), '_confirmPopup');
+    setPopups(document.querySelectorAll('.predict__btn.took-part'), '_confirmPopup');
 
 //go to predict
     document.querySelector(".toPredict").addEventListener('click', function () {

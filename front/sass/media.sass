@@ -588,7 +588,8 @@
   .table
     background-size: 0
     &:after
-      bottom: 154px
+      bottom: 115px
+      background: linear-gradient(180deg, rgba(0, 0, 85, 0) 0%, #005 67%)
     .wrapp
       width: 100%
       &:before
@@ -634,7 +635,6 @@
       &-item
         font-size: 8px
         text-shadow: 0px 1.227px 0px rgba(0, 0, 0, 0.25)
-        white-space: nowrap
         &:nth-child(1)
           width: 82px
           padding-left: 12px
@@ -741,16 +741,17 @@
     line-height: 14px
   .popups
     &__item
+      &-info
+        width: 375px
       &-top
         width: 73px
       &-tnx
-        width: 177px
         &:before
           height: 60px
           left: -172%
-      &-close
-        &.closeConf
-          right: 90px
+        &-img
+          .uk
+            width: 177px
       &-center
         font-size: 24px
         letter-spacing: 0.48px
@@ -758,10 +759,6 @@
         font-size: 16px
         letter-spacing: 0.64px
         padding: 15px 63px
-
-@media screen and (max-width: 430px)
-  .popups__item-close.closeConf
-    right: 130px
 
 @media screen and (max-width: 360px)
   .promo
@@ -864,7 +861,7 @@
       &-close
         top: -15px
         &.closeConf
-          right: 150px
+          right: 63px
 
 @media screen and (max-width: 330px)
   .btn
@@ -880,4 +877,4 @@
         transform-origin: center
       &-close
         &.closeConf
-          right: 170px
+          right: 65px

@@ -108,7 +108,7 @@ body.dark
     &:before
       background: linear-gradient(0deg, rgba(21, 22, 33, 0.00) 0%, #151621 68%)
     &:after
-      background: linear-gradient(180deg, rgba(18, 19, 29, 0) 0%, #12131d 92%)
+      background: linear-gradient(180deg, rgba(18, 19, 29, 0) 0%, #12131d 71%)
       @media screen and (max-width: 360px)
         background: linear-gradient(180deg, rgba(18, 19, 29, 0) 0%, #12131d 41%)
     .wrapp
@@ -183,6 +183,48 @@ picture
         width: 255px
       @media screen and (max-width: 335px)
         width: 205px
+  .popups
+    &__item-tnx
+      &:before
+        left: -52%
+      &-img
+        .en
+          width: 375px
+    @media screen and (max-width: 1050px)
+    &__item
+      &-info
+        width: 712px
+    @media screen and (max-width: 750px)
+    &__item
+      &-info
+        width: 600px
+    @media screen and (max-width: 615px)
+      &__item
+        &-info
+          width: 425px
+        &-tnx
+          &-img
+            .en
+              width: 295px
+    @media screen and (max-width: 460px)
+      &__item
+        &-info
+          width: 300px
+        &-center
+          font-size: 21px
+    @media screen and (max-width: 340px)
+      &__item
+        &-info
+          width: 250px
+        &-tnx
+          &-img
+            .en
+              width: 270px
+        &-center
+          font-size: 18px
+
+
+
 //end EN
 
 body
@@ -1017,11 +1059,11 @@ body
       font-size: 13px
       letter-spacing: 0.52px
       width: 100%
-      white-space: nowrap
+      white-space: normal
       display: flex
       text-transform: uppercase
       &:nth-child(1)
-        width: 136px
+        width: 138px
         padding-left: 20px
       &:nth-child(2)
         width: 147px
@@ -1264,6 +1306,9 @@ body
   padding: 24px 0 44px
   span
     text-decoration: underline
+  p
+    &:first-child
+      margin-bottom: 14px
 .popups
   position: fixed
   top: 0
@@ -1312,12 +1357,14 @@ body
     &-top
       width: 98px
     &-tnx
-      width: 221px
+      width: fit-content
       position: relative
       &-img
         position: relative
         z-index: 3
         width: 100%
+        .uk
+          width: 221px
       &::before
         z-index: 1
         content: ""
@@ -1325,7 +1372,7 @@ body
         top: 37px
         left: -119%
         width: 760px
-        height: 80px
+        height: 93px
         background: url('../../img/predict/redlines.png') no-repeat 50% 50%/cover
     &-center
       z-index: 3
@@ -1335,6 +1382,7 @@ body
       text-transform: uppercase
       color: $white
       margin-bottom: 48px
+      text-align: center
       span
         color: $magenta
     &-btn
