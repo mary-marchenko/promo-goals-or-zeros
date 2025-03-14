@@ -664,12 +664,15 @@
         width: 2px
     &__row
       &-you
-        top: 4px
         transform: rotate(270deg)
         left: -10px
         font-size: 9px
         color: $white
         letter-spacing: 0.24px
+        min-width: 27px
+        display: flex
+        justify-content: center
+        top: 12px
       &-item
         font-size: 11px
         height: 36px
@@ -828,7 +831,7 @@
     z-index: 3
     &:after
       height: 120px
-      bottom: 150px
+      bottom: 145px
     .wrapp
       background-size: 100% 470px
     &.tablePos
