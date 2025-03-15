@@ -281,9 +281,10 @@
     &__wrap
       transform: scale(0.85)
       transform-origin: center
+      margin-bottom: -20px
     &__bottom
       width: 540px
-      margin-top: 0
+      margin-top: 30px
   .drop
     max-width: 540px
     .dropdown
@@ -564,6 +565,8 @@
       &-result
         font-size: 12px
         padding-bottom: 0
+      &-goal
+        max-width: 300px
       &-text
         font-size: 12px
       &-country
@@ -571,9 +574,11 @@
     &__container
       &.goalCont
         margin-top: 25px
+        .predict__container-calculations
+          margin-top: -6px
       &-top
         font-size: 12px
-        width: 240px
+        width: 280px
     &__zero
       width: 156px
       margin: 0 -19px
@@ -593,14 +598,14 @@
   .table
     background-size: 0
     &:after
-      bottom: 115px
+      bottom: 213px
       background: linear-gradient(180deg, rgba(0, 0, 85, 0) 0%, #005 67%)
     .wrapp
       width: 100%
       &:before
         content: ""
         position: absolute
-        top: 0
+        top: -2px
         left: 0
         width: 100%
         height: 170px
@@ -618,6 +623,7 @@
       width: 343px
       transform: scale(1)
       transform-origin: center
+      margin-bottom: 30px
     &__tabs
       &-date
         width: 132px
@@ -640,19 +646,27 @@
       &-item
         font-size: 8px
         text-shadow: 0px 1.227px 0px rgba(0, 0, 0, 0.25)
+        text-align: center
         &:nth-child(1)
           width: 82px
-          padding-left: 12px
-          padding-right: 11px
+          padding-left: 0
+          padding-right: 0
+          justify-content: center
         &:nth-child(2)
           width: 67px
-          padding-right: 11px
+          padding-right: 0
+          padding-left: 0
+          justify-content: center
         &:nth-child(3)
           width: 82px
-          padding-right: 11px
+          padding-right: 0
+          padding-left: 0
+          justify-content: center
         &:nth-child(4)
           width: 88px
-          padding-right: 11px
+          padding-right: 0
+          padding-left: 0
+          justify-content: center
     &__body
       &-scroll
         height: 398px
@@ -719,7 +733,7 @@
             padding-right: 11px
     &__bottom
       width: 343px
-      padding-top: 20px
+      padding-top: 0
       p
         font-size: 10px
         line-height: 14px
@@ -727,7 +741,7 @@
     width: 340px
     .dropdown
       summary
-        padding: 11px 99px 11px 28px
+        padding: 11px 65px 11px 28px
         font-size: 12px
         letter-spacing: 0.24px
         &:after
@@ -766,7 +780,6 @@
       &-btn
         font-size: 16px
         letter-spacing: 0.64px
-        padding: 15px 63px
 
 @media screen and (max-width: 360px)
   .promo
@@ -785,8 +798,11 @@
     &__title
       width: 223px
       &:after
-        left: 225px
+        left: 234px
         z-index: 3
+        bottom: -396px
+        height: 391px
+        width: 50px
     &__list
       transform: scale(0.8)
       transform-origin: top center
@@ -831,7 +847,7 @@
     z-index: 3
     &:after
       height: 120px
-      bottom: 145px
+      bottom: 220px
     .wrapp
       background-size: 100% 470px
     &.tablePos
@@ -840,8 +856,9 @@
     &__wrap
       transform: scale(0.8)
       transform-origin: top center
+      margin-bottom: -60px
     &__bottom
-      margin-top: -82px
+      margin-top: 27px
       width: 270px
       p
         font-size: 10px
@@ -874,8 +891,13 @@
 @media screen and (max-width: 330px)
   .btn
     min-width: 260px
+    max-width: 260px
   .gide__list-btn
     min-width: 140px
+  .promo
+    &__prize
+      &-btn
+        padding: 10px
 
 @media screen and (max-width: 320px)
   .popups

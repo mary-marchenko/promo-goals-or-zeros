@@ -78,7 +78,7 @@ body.dark
       @media screen and (max-width: 360px)
         top: -44px
       @media screen and (max-width: 350px)
-        background: linear-gradient(180deg, rgba(21, 22, 33, 0) 0%, #12131d 27%)
+        background: linear-gradient(180deg, rgba(21, 22, 33, 0) 0%, #12131d 21%)
     &__list
       &-item
         &:after
@@ -93,9 +93,13 @@ body.dark
       @media screen and (max-width: 600px)
         top: -2px
     &:after
-      background: linear-gradient(180deg, rgba(21, 22, 33, 0.00) 0%, #151621 35%)
+      background: linear-gradient(180deg, rgba(21, 22, 33, 0.00) 0%, #151621 95%)
+      @media screen and (max-width: 700px)
+        background: linear-gradient(180deg, rgba(21, 22, 33, 0.00) 0%, #151621 80%)
       @media screen and (max-width: 600px)
-        background: linear-gradient(180deg, rgba(21, 22, 33, 0.00) 0%, #151621 76%)
+        background: linear-gradient(180deg, rgba(21, 22, 33, 0.00) 0%, #151621 62%)
+      @media screen and (max-width: 360px)
+        height: 114px
     &__last
       &-info
         background: linear-gradient(90deg, rgba(33, 34, 52, 0.00) 0%, #212234 50.15%, rgba(33, 34, 52, 0.00) 100%)
@@ -110,7 +114,7 @@ body.dark
     &:after
       background: linear-gradient(180deg, rgba(18, 19, 29, 0) 0%, #12131d 71%)
       @media screen and (max-width: 360px)
-        background: linear-gradient(180deg, rgba(18, 19, 29, 0) 0%, #12131d 41%)
+        background: linear-gradient(180deg, rgba(18, 19, 29, 0) 0%, #12131d 36%)
     .wrapp
       &:before
         @media screen and (max-width: 600px)
@@ -179,6 +183,13 @@ picture
         width: 319px
       @media screen and (max-width: 335px)
         width: 255px
+    &__tabs
+      @media screen and (max-width: 600px)
+        &-goal,
+        &-score
+          font-size: 9px
+        &-score
+          padding-left: 20px
   .table
     &__title
       width: 459px
@@ -306,13 +317,13 @@ body
     @media screen and (max-width: 1050px)
       background: url("../img/teams/card-1-tab.png") no-repeat 100% 100%/cover
     @media screen and (max-width: 600px)
-      background: url("../img/teams/card-1-mob.png") no-repeat 100% 100%/cover
+      background: url("../img/teams/card-1-mob.png") no-repeat 100% 12%/cover
   &.team2
     background: url('../img/teams/card-2-desk.png') no-repeat 100% 100%/cover
     @media screen and (max-width: 1050px)
       background: url("../img/teams/card-2-tab.png") no-repeat 100% 100%/cover
     @media screen and (max-width: 600px)
-      background: url("../img/teams/card-2-mob.png") no-repeat 100% 100%/cover
+      background: url("../img/teams/card-2-mob.png") no-repeat 100% 12%/cover
 .fav-page
   display: flex
   align-items: center
@@ -369,7 +380,7 @@ body
       margin-bottom: 15px
     &-btn
       margin-bottom: 35px
-      padding: 24px 64px
+      //padding: 24px 64px
       font-size: 24px
     &-bonusTxt
       font-family: $font-montserrat-bold
@@ -507,7 +518,7 @@ body
     left: 0
     width: 100%
     height: 180px
-    background: linear-gradient(180deg, rgba(0, 0, 85, 0.00) 0%, #005 35%)
+    background: linear-gradient(180deg, rgba(0, 0, 85, 0.00) 0%, #005 96%)
   &:before
     z-index: 2
     content: ""
@@ -814,6 +825,24 @@ body
       align-items: center
       margin-top: -100px
       z-index: 3
+    &.unactive
+      .predict
+        &__team
+          &-decrease,
+          &-increase
+            display: none
+        &__btn
+          background: url('../img/btn-bg-unactive.png') no-repeat 50% 50%/cover
+          text-shadow: 0px 3px 0px #42464a
+          pointer-events: none
+        &__radio
+          &-item
+            opacity: 0
+            &.radioWinner
+              opacity: 1
+              input[type="radio"]
+                &:not(:checked) + label
+                  background: url("../img/predict/radiobutton-active.png") no-repeat 50% 50% / cover
   &__info
     margin-bottom: 16px
     margin-top: 22px
@@ -863,7 +892,7 @@ body
           background: url('../img/predict/forecasts-right-mob.png') no-repeat 100% 50%/cover
   &__btn
     font-size: 24px
-    padding: 24px 52px
+    //padding: 24px 52px
     letter-spacing: 0.48px
     text-shadow: 0px 3px 0px #3F966F
     margin-bottom: 15px
@@ -884,6 +913,8 @@ body
       justify-content: center
       align-items: center
       margin: 19px 0
+      max-width: 380px
+      flex-wrap: wrap
     &-text
       font-family: $font-montserrat-semiBold
       font-size: 14px
@@ -996,6 +1027,7 @@ body
     margin: 44px auto 40px
     z-index: 2
   &__wrap
+    margin-bottom: 40px
     width: 640px
     height: 740px
     padding: 0 20px
@@ -1182,7 +1214,7 @@ body
   &__bottom
     z-index: 3
     width: 575px
-    margin: 30px auto 14px
+    margin: 40px auto 14px
     p
       color: $grey
       font-size: 14px

@@ -396,6 +396,30 @@
         });
     });
 
+    //Show first goal winner after match
+    function setRadioWinner(index) {
+        const container = document.querySelector(".unactive .predict__radio");
+
+        if (!container) return;
+
+        const items = container.querySelectorAll(".predict__radio-item");
+
+        if (items.length >= index) {
+            const targetItem = items[index - 1]; // Отримуємо потрібного потомка (1 → 0, 2 → 1, 3 → 2)
+
+            targetItem.classList.add("radioWinner");
+
+            const spanElement = targetItem.querySelector('span');
+            if (spanElement) {
+                spanElement.dataset.translate = "winnerFirstGoal";
+                spanElement.textContent = "Перший гол";
+            }
+        }
+    }
+    let firstGoalResult = 1;
+    // setRadioWinner(firstGoalResult);
+
+
 // TEST
     document.querySelector('.dark-btn').addEventListener('click', () => {
         document.body.classList.toggle('dark');
@@ -456,4 +480,28 @@
             });
         });
     });
+
+    document.addEventListener("DOMContentLoaded", () => {
+        // Функція для перемикання меню
+        document.querySelector(".menu-btn")?.addEventListener("click", () => {
+            document.querySelector(".menu-test")?.classList.toggle("hide");
+        });
+    });
+
+    document.querySelector(".btn-after")?.addEventListener("click", () => {
+        document.querySelector(".score-1")?.classList.toggle("unactive");
+        document.querySelector(".goal-1")?.classList.toggle("unactive");
+
+        // Якщо клас .unactive є у .score-1 (тобто активується), викликаємо setRadioWinner
+        if (document.querySelector(".score-1")?.classList.contains("unactive")) {
+            setRadioWinner(firstGoalResult);
+        } else {
+            // Якщо клас .unactive знімається, прибираємо клас radioWinner у всіх елементах
+            document.querySelectorAll(".predict__radio-item").forEach(item => {
+                item.classList.remove("radioWinner");
+            });
+        }
+    });
+
+
 })()
