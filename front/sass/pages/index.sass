@@ -97,7 +97,9 @@ body.dark
       @media screen and (max-width: 1350px)
         background: linear-gradient(180deg, rgba(21, 22, 33, 0.00) 0%, #151621 35%)
       @media screen and (max-width: 1350px)
-        background: linear-gradient(180deg, rgba(21, 22, 33, 0.00) 0%, #151621 85%)
+        background: linear-gradient(180deg, rgba(21, 22, 33, 0.00) 0%, #151621 35%)
+      @media screen and (max-width: 1050px)
+        background: linear-gradient(180deg, rgba(21, 22, 33, 0.00) 0%, #151621 95%)
       @media screen and (max-width: 700px)
         background: linear-gradient(180deg, rgba(21, 22, 33, 0.00) 0%, #151621 80%)
       @media screen and (max-width: 600px)
@@ -111,7 +113,9 @@ body.dark
         background-image: url("../img/predict/redlines-dark.png")
       &:before
         @media screen and (max-width: 360px)
-          background: linear-gradient(180deg, rgba(0, 0, 85, 0) 0%, #151621 55%)
+          background: linear-gradient(180deg, rgba(0, 0, 85, 0) 0%, #151621 35%)
+          height: 105px
+          top: -100px
   .table
     &:before
       background: linear-gradient(0deg, rgba(21, 22, 33, 0.00) 0%, #151621 68%)
@@ -377,6 +381,9 @@ body
       font-size: 28px
       color: $white
       text-transform: uppercase
+      white-space: nowrap
+      display: flex
+      justify-content: center
       span
         color: $magenta
     &-money
@@ -836,9 +843,11 @@ body
           &-increase
             display: none
         &__btn
-          background: url('../img/btn-bg-unactive.png') no-repeat 50% 50%/cover
-          text-shadow: 0px 3px 0px #42464a
-          pointer-events: none
+          &.btn-join,
+          &.took-part
+            background: url('../img/btn-bg-unactive.png') no-repeat 50% 50%/cover
+            text-shadow: 0px 3px 0px #42464a
+            pointer-events: none
         &__radio
           &-item
             opacity: 0
