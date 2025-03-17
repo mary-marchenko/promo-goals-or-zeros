@@ -419,6 +419,18 @@
     let firstGoalResult = 1;
     // setRadioWinner(firstGoalResult);
 
+    function toggleAndSetScores(score1, score2) {
+        const scoreElement = document.querySelector(".score-1");
+        const goalElement = document.querySelector(".goal-1");
+
+        scoreElement?.classList.toggle("unactive");
+        goalElement?.classList.toggle("unactive");
+
+        document.querySelectorAll(".unactive .predict__team-number").forEach((el, index) => {
+            el.textContent = index === 0 ? score1 : score2;
+        });
+    }
+    // toggleAndSetScores(1, 2)
 
 // TEST
     document.querySelector('.dark-btn').addEventListener('click', () => {
@@ -482,21 +494,17 @@
     });
 
     document.addEventListener("DOMContentLoaded", () => {
-        // Функція для перемикання меню
         document.querySelector(".menu-btn")?.addEventListener("click", () => {
             document.querySelector(".menu-test")?.classList.toggle("hide");
         });
     });
 
     document.querySelector(".btn-after")?.addEventListener("click", () => {
-        document.querySelector(".score-1")?.classList.toggle("unactive");
-        document.querySelector(".goal-1")?.classList.toggle("unactive");
+        toggleAndSetScores(1, 2)
 
-        // Якщо клас .unactive є у .score-1 (тобто активується), викликаємо setRadioWinner
         if (document.querySelector(".score-1")?.classList.contains("unactive")) {
             setRadioWinner(firstGoalResult);
         } else {
-            // Якщо клас .unactive знімається, прибираємо клас radioWinner у всіх елементах
             document.querySelectorAll(".predict__radio-item").forEach(item => {
                 item.classList.remove("radioWinner");
             });
