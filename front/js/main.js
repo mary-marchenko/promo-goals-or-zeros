@@ -269,7 +269,7 @@
     }
     animateCards();
 
-// predict tabs
+    // predict tabs
     document.addEventListener("DOMContentLoaded", function() {
 
         const tabs = document.querySelectorAll('.predict__tabs-global > div, .predict__tabs-dates > div');
@@ -310,7 +310,7 @@
         updateContainers();
     });
 
-//score
+    //score
     document.querySelectorAll('.predict__team-increase').forEach(button => {
         button.addEventListener('click', function() {
             const teamControl = this.closest('.predict__team-control');
@@ -331,7 +331,7 @@
         });
     });
 
-//table tabs
+    //table tabs
     document.querySelectorAll('.table__tabs-date').forEach(tab => {
         tab.addEventListener('click', function() {
             if (this.classList.contains('active')) {
@@ -350,7 +350,7 @@
         });
     });
 
-//popups
+    //popups
 
     function setPopups(triggerButtons, popupClass) {
         const popupsContainer = document.querySelector('.popups');
@@ -385,7 +385,7 @@
     setPopups(document.querySelectorAll('.gide__list-btn'), 'gidePopup');
     setPopups(document.querySelectorAll('.predict__btn.took-part'), '_confirmPopup');
 
-//go to predict
+    //go to predict
     document.querySelector(".toPredict").addEventListener('click', function () {
         const targetElement = document.getElementById("predict");
         const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - 2;
@@ -411,7 +411,7 @@
 
             const spanElement = targetItem.querySelector('span');
             if (spanElement) {
-                spanElement.dataset.translate = "winnerFirstGoal";
+                // spanElement.dataset.translate = "winnerFirstGoal";
                 spanElement.textContent = "Перший гол";
             }
         }
@@ -432,7 +432,7 @@
     }
     // toggleAndSetScores(1, 2)
 
-// TEST
+    // TEST
     document.querySelector('.dark-btn').addEventListener('click', () => {
         document.body.classList.toggle('dark');
     });
