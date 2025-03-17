@@ -411,13 +411,13 @@
 
             const spanElement = targetItem.querySelector('span');
             if (spanElement) {
-                // spanElement.dataset.translate = "winnerFirstGoal";
+                spanElement.dataset.translate = "winnerFirstGoal";
                 spanElement.textContent = "Перший гол";
             }
         }
     }
     let firstGoalResult = 1;
-    // setRadioWinner(firstGoalResult);
+    setRadioWinner(firstGoalResult);
 
     function toggleAndSetScores(score1, score2) {
         const scoreElement = document.querySelector(".score-1");
